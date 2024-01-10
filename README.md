@@ -97,8 +97,6 @@ All funtions in `tawnydragon` return information in reverse chronological order 
 838            binomial  2008-11-19            Taxon  ...   term   deprecated  http://rs.tdwg.org/dwc/terms/version/binomial-...
 
 [839 rows x 9 columns]
->>> 
-
 ```
 
 Of course, looking at all past and present terms for any standard is not especially useful; It makes more sense to choose a single standard and version, and show only those terms within it. You can choose only the terms that are `recommended` rather than `superseded`, 
