@@ -1,0 +1,14 @@
+[tool.poetry]
+name = "tawnydragon"
+version = "0.1.0"
+description = ""
+authors = ["acbuyan <amanda.buyan@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+pandas = "^2.1.4"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
