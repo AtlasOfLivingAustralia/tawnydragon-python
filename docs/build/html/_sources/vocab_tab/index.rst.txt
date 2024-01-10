@@ -1,6 +1,8 @@
 Vocabulary List
 ===============
 
+.. dropdown:: Dataset
+
     .. dropdown:: datasetID
 
         *status: superseded*
@@ -8,6 +10,8 @@ Vocabulary List
         An identifier for the data set. May be a global unique identifier or an identifier specific to a collection or institution.
 
 
+
+.. dropdown:: Event
 
     .. dropdown:: day
 
@@ -413,6 +417,8 @@ Vocabulary List
 
 
 
+.. dropdown:: EventAttribute
+
     .. dropdown:: EventAttributeDeterminedBy
 
         *status: deprecated*
@@ -463,6 +469,8 @@ Vocabulary List
 
 
 
+.. dropdown:: EventMeasurement
+
     .. dropdown:: eventMeasurementAccuracy
 
         *status: deprecated*
@@ -512,6 +520,8 @@ Vocabulary List
         The value of the measurement or characteristic of the event.
 
 
+
+.. dropdown:: GeologicalContext
 
     .. dropdown:: bed
 
@@ -917,6 +927,8 @@ Vocabulary List
 
 
 
+.. dropdown:: Identification
+
     .. dropdown:: dateIdentified
 
         *status: recommended*
@@ -1140,6 +1152,8 @@ Vocabulary List
         A list (concatenated and separated) of previous ScientificNames to which the sample was identified.
 
 
+
+.. dropdown:: Location
 
     .. dropdown:: continent
 
@@ -2031,6 +2045,8 @@ Vocabulary List
 
 
 
+.. dropdown:: MaterialEntity
+
     .. dropdown:: associatedSequences
 
         *status: recommended*
@@ -2069,6 +2085,8 @@ Vocabulary List
 
 
 
+.. dropdown:: MaterialSample
+
     .. dropdown:: materialSampleID
 
         *status: recommended*
@@ -2100,6 +2118,8 @@ Vocabulary List
         An identifier for the MaterialSample (as opposed to a particular digital record of the material sample). In the absence of a persistent global unique identifier, construct one from a combination of identifiers in the record that will most closely make the materialSampleID globally unique.
 
 
+
+.. dropdown:: MeasurementOrFact
 
     .. dropdown:: measurementAccuracy
 
@@ -2336,6 +2356,8 @@ Vocabulary List
         The value of the measurement, fact, characteristic, or assertion.
 
 
+
+.. dropdown:: No Parent Class
 
     .. dropdown:: Event
 
@@ -3071,6 +3093,8 @@ Vocabulary List
 
 
 
+.. dropdown:: Occurrence
+
     .. dropdown:: vitality
 
         *status: recommended*
@@ -3685,6 +3709,8 @@ Vocabulary List
 
 
 
+.. dropdown:: OccurrenceMeasurement
+
     .. dropdown:: occurrenceMeasurementAccuracy
 
         *status: deprecated*
@@ -3734,6 +3760,8 @@ Vocabulary List
         The value of the measurement or characteristic of the occurrence.
 
 
+
+.. dropdown:: Organism
 
     .. dropdown:: associatedOrganisms
 
@@ -3862,6 +3890,8 @@ Vocabulary List
         A list (concatenated and separated) of previous assignments of names to the Organism.
 
 
+
+.. dropdown:: ResourceRelationship
 
     .. dropdown:: relationshipEstablishedDate
 
@@ -4051,6 +4081,8 @@ Vocabulary List
 
 
 
+.. dropdown:: Sample
+
     .. dropdown:: SampleRemarks
 
         *status: deprecated*
@@ -4064,6 +4096,8 @@ Vocabulary List
         A description of constraints on the use of the data as shared or access to further data that is not shared.
 
 
+
+.. dropdown:: SampleAttribute
 
     .. dropdown:: SampleAttributeDeterminedBy
 
@@ -4115,6 +4149,8 @@ Vocabulary List
 
 
 
+.. dropdown:: SamplingEvent
+
     .. dropdown:: SamplingEventRemarks
 
         *status: deprecated*
@@ -4134,6 +4170,8 @@ Vocabulary List
         An identifier for the sampling event. May be a global unique identifier or an identifier specific to the data set.
 
 
+
+.. dropdown:: Taxon
 
     .. dropdown:: superfamily
 
