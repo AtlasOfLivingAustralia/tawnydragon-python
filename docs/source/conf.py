@@ -22,12 +22,12 @@ sys.path.insert(0,"../../tawnydragon/")
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
 
 extensions = [
-    'myst_parser',
-    'sphinx-prompt',
-    'sphinxcontrib.programoutput',
+	'myst_parser',
+	'sphinx-prompt',
+	'sphinxcontrib.programoutput',
+	'sphinx_design',
     'sphinx.ext.napoleon',
     'sphinx.ext.autosectionlabel',
-    'sphinx_design'
 ]
 
 autosectionlabel_prefix_document = True
@@ -37,8 +37,8 @@ myst_enable_extensions = ["colon_fence"]
 
 templates_path = ['_templates']
 version = str(tawnydragon.__version__)
+release = version
 source_path = os.path.dirname(os.path.abspath(__file__))
-exclude_patterns = []
 
 # -- Options for HTML output -------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#options-for-html-output
@@ -46,7 +46,7 @@ exclude_patterns = []
 html_theme = 'pydata_sphinx_theme'
 
 html_theme_options = {
-	"navbar_align": "content",
+	"navbar_align": "content", 
 	"github_url": "https://github.com/AtlasOfLivingAustralia/tawnydragon-python",
 	"secondary_sidebar_items": ["page-toc"],
     "logo": {

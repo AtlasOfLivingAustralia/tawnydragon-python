@@ -10,7 +10,7 @@
 
 **Date**: |today|  **Version**: |version|  
 
-The [Biodiversity Information Standards Group](https://www.tdwg.org/) - commonly known as TDWG - develops and standards for 
+The `Biodiversity Information Standards Group <https://www.tdwg.org/>`_ - commonly known as TDWG - develops and standards for 
 sharing biodiversity information. ``{tawnydragon}`` is a fast and tidy R interface to those standards.
 
 The package name refers is one common name for *Ctenophorus decresii*, a species whose common name happens to contain all 

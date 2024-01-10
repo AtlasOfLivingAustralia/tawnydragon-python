@@ -39,7 +39,7 @@ def show_dwc_information(infotype=None,
         >>> import tawnydragon
         >>> tawnydragon.show_dwc_information(infotype="standards")
 
-    .. program-output:: python -c "import tawnydragon;print(tawnydragon.show_dwc_information(infotype=\\\"standards\\\"))"
+    .. program-output:: python -c "import tawnydragon;import pandas as pd;pd.set_option('display.max_columns', None);pd.set_option('display.expand_frame_repr', False);pd.set_option('max_colwidth', None);print(tawnydragon.show_dwc_information(infotype=\\\"standards\\\"))"
 
     Get only recommended Darwin Core Terms
 
@@ -48,7 +48,7 @@ def show_dwc_information(infotype=None,
         >>> import tawnydragon
         >>> tawnydragon.show_dwc_information(infotype="terms",recommended=True)
 
-    .. program-output:: python -c "import tawnydragon;print(tawnydragon.show_dwc_information(infotype=\\\"terms\\\",recommended=True))"
+    .. program-output:: python -c "import tawnydragon;import pandas as pd;pd.set_option('display.max_columns', None);pd.set_option('display.expand_frame_repr', False);pd.set_option('max_colwidth', None);print(tawnydragon.show_dwc_information(infotype=\\\"terms\\\",recommended=True))"
 
     """
 
