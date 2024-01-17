@@ -1,7 +1,9 @@
-from .common_dictionaries import table_names, date_names, url_to_remove
+from .common_dictionaries import table_names, date_names, url_to_remove, base_url, term_files
+import pandas as pd
 
 def tidy_columns(dataframe=None,
-                 tablename=None):
+                 tablename=None,
+                 version=None):
 
     # first, check for data frame
     if dataframe is None:
@@ -15,7 +17,7 @@ def tidy_columns(dataframe=None,
     if tablename == "standards":
         dataframe['code'] = dataframe['version'].apply(lambda x: x.replace(url_to_remove[tablename],"").split("/")[0])
     elif tablename == "vocabularies":
-        dataframe['code'] = dataframe['version'].apply(lambda x: x.replace(url_to_remove[tablename],"").split("/")[1])
+        dataframe['code'] = dataframe['version'].apply(lambda x: x.replace(url_to_remove[tablename],"").split("/")[0])
     elif tablename == "termlists":
         dataframe['code'] = dataframe['version'].apply(lambda x: "/".join([x.replace(url_to_remove[tablename], "").split("/")[0],x.strip(url_to_remove[tablename]).split("/")[2]]))
     else:
@@ -25,12 +27,50 @@ def tidy_columns(dataframe=None,
                 "rdfs_comment": "description"
             }
         )
+        return dataframe.rename(
+        columns={
+            date_names[tablename]: "date",
+        }
+    )
 
     # rename columns
+    if version is not None:
+        dataframe = dataframe.rename(
+            columns={
+                date_names[tablename]: "date",
+                table_names[tablename]: "status",
+            }
+        )
+        return dataframe[dataframe['date'] == version]
+    
+    # otherwise, return dataframe as is
     return dataframe.rename(
         columns={
             date_names[tablename]: "date",
             table_names[tablename]: "status",
-            "version": "key"
         }
     )
+
+def check_recommended(recommended=False,
+                      dataframe=None,
+                      tablename=None,
+                      columns=None,
+                      filters=None,
+                      ascending=None,
+                      version=None):
+
+        # return only recommended terms ordered correctly
+        if recommended:
+            new_dwc_information = tidy_columns(
+                    dataframe=dataframe,
+                    tablename=tablename,
+                    version=version
+                    )[columns].sort_values(filters,ascending=ascending).reset_index(drop=True)
+            return new_dwc_information[new_dwc_information["status"] == "recommended"].reset_index(drop=True)
+        
+        # return the terms correctly ordered
+        return tidy_columns(
+            dataframe=dataframe,
+            tablename=tablename,
+            version=version
+        )[columns].sort_values(filters,ascending=ascending).reset_index(drop=True)
