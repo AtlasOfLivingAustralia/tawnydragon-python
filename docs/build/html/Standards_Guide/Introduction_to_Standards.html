@@ -1,0 +1,582 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Introduction To The Available Standards &#8212; Tawnydragon 0.1.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/extra.css?v=33134f48" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/extra.css?v=33134f48" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=bd9e20870c6007c4c509"></script>
+
+    <script src="../_static/documentation_options.js?v=01f34227"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Standards_Guide/Introduction_to_Standards';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Explaining Required Darwin Core Terms In the Context of Data" href="Explaining_Required_Terms.html" />
+    <link rel="prev" title="A Guide to the Vocabulary of Biodiversity" href="index.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <header>
+  
+    <div class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Tawnydragon 0.1.0 documentation - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Tawnydragon 0.1.0 documentation - Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav class="navbar-nav">
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="index.html">
+                        Standards Guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../vocab_tab/index.html">
+                        Vocabulary List
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../autoapi/tawnydragon.html">
+                        API Docs
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/AtlasOfLivingAustralia/tawnydragon-python" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </div>
+  
+  </header>
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item">
+<nav class="navbar-nav">
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="index.html">
+                        Standards Guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../vocab_tab/index.html">
+                        Vocabulary List
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../autoapi/tawnydragon.html">
+                        API Docs
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/AtlasOfLivingAustralia/tawnydragon-python" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Introduction To The Available Standards</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Explaining_Required_Terms.html">What Are Required Terms for Darwin Core?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Explaining_Recommended_Terms.html">What Are Recommended Terms for Darwin Core?</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">A Guide to the Vocabulary of Biodiversity</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Introduction...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="introduction-to-the-available-standards">
+<h1>Introduction To The Available Standards<a class="headerlink" href="#introduction-to-the-available-standards" title="Link to this heading">#</a></h1>
+<p>Below are the six available “standards” from TDWG.  These standards are a way of describing
+particular kinds of data, and we provide a brief introduction to help you make the decision of
+which standard to use for your data.</p>
+<section id="darwin-core">
+<h2>Darwin Core<a class="headerlink" href="#darwin-core" title="Link to this heading">#</a></h2>
+<p>This is the standard that you will most likely use, as this is meant for species occurrence records.
+This can include observations, specimens, and samples of taxa, as well as other related information.
+These can also be extended to include multimedia, using the <code class="docutils literal notranslate"><span class="pre">multimedia</span></code> extension (for those who
+have images, videos and sounds of their species), as well as something called an <code class="docutils literal notranslate"><span class="pre">eventCore</span></code>.</p>
+<p>An <code class="docutils literal notranslate"><span class="pre">eventCore</span></code> describes one or more of a series of <code class="docutils literal notranslate"><span class="pre">events</span></code>, such as surveys, visits to a specific
+site several times, bio blitzes and the like.  This is meant to show the occurrences of species over time,
+and is quite useful to observe changes over time.</p>
+<p><em>Official description as per `TDWG &lt;https://www.tdwg.org/standards/dwc/&gt;`_: Darwin Core is a standard
+maintained by the Darwin Core maintenance group. It includes a glossary of terms (in other contexts
+these might be called properties, elements, fields, columns, attributes, or concepts) intended to
+facilitate the sharing of information about biological diversity by providing identifiers, labels,
+and definitions. Darwin Core is primarily based on taxa, their occurrence in nature as documented
+by observations, specimens, samples, and related information.</em></p>
+</section>
+<section id="audiovisual-core">
+<h2>Audiovisual Core<a class="headerlink" href="#audiovisual-core" title="Link to this heading">#</a></h2>
+<p><strong>Coming soon!</strong></p>
+<p>These terms are relevant for those who have data that comes under the category of “audio” or “visual”.
+This standard includes terms such as X.</p>
+<p><em>Official description as per `TDWG &lt;https://www.tdwg.org/standards/ac/&gt;`_: The Audiovisual Core (AC) is a set of vocabularies designed to represent metadata for biodiversity
+multimedia resources and collections. These vocabularies aim to represent information that will help
+to determine whether a particular resource or collection will be fit for some particular biodiversity
+science application before acquiring the media. Among others, the vocabularies address such concerns
+as the management of the media and collections, descriptions of their content, their taxonomic,
+geographic, and temporal coverage, and the appropriate ways to retrieve, attribute and reproduce them.</em></p>
+</section>
+<section id="standards-documentation-standard-sds">
+<h2>Standards Documentation Standard (SDS)<a class="headerlink" href="#standards-documentation-standard-sds" title="Link to this heading">#</a></h2>
+<p><strong>Coming soon!</strong></p>
+<p>These terms are relevant for those who are interested in the hierarchy and standards of current and previous
+Darwin Core Terms.  It also includes details about how these are supposed to be represented.</p>
+<p><em>Official description as per `TDWG &lt;https://www.tdwg.org/standards/sds/&gt;`_: The TDWG Standards Documentation
+Standard consists of a single document: the Standards Documentation Specification. That document defines how
+TDWG standards are to be presented. It provides details about the hierarchical structure of standards and
+versioning of standards components. It specifies how the properties of standards and their components are to
+be described in human-readable and machine-readable terms.</em></p>
+</section>
+<section id="vocabulary-maintenance-standard-vms">
+<h2>Vocabulary Maintenance Standard (VMS)<a class="headerlink" href="#vocabulary-maintenance-standard-vms" title="Link to this heading">#</a></h2>
+<p><strong>Coming soon!</strong></p>
+<p>These terms are relevant for those who are interested in how TDWG maintains their vocabulary.</p>
+<p><em>Official description as per `TDWG &lt;https://www.tdwg.org/standards/ac/&gt;`_: TDWG vocabularies are a collection
+of standardized terms and their definitions. Vocabulary standards differ from other Biodiversity Information
+Standards (TDWG) standards in that they are likely to change more often over time as they evolve to meet the
+changing needs of the biodiversity informatics community. These changes may be incremental, making it
+impractical to apply the full TDWG standards process to every change. The TDWG Vocabulary Maintenance
+Specification details the categories of changes that can be made to a TDWG vocabulary standard, the mechanisms
+used to achieve those changes, and the entities that are responsible for shepherding those changes through the
+process.</em></p>
+</section>
+<section id="guid-and-life-sciences-identifiers-applicability-statements">
+<h2>GUID and LIfe Sciences Identifiers Applicability Statements<a class="headerlink" href="#guid-and-life-sciences-identifiers-applicability-statements" title="Link to this heading">#</a></h2>
+<p><strong>Coming soon!</strong></p>
+<p>These terms are relevant for those who are interested in generating Globally Unique Identifiers (GUIDs) to
+meet specific standards.</p>
+<p><em>Official description as per `TDWG &lt;https://www.tdwg.org/standards/guid-as/&gt;`_: The TDWG GUID Applicability
+Statement 1) provides guidance on how to use GUIDs (Globally Unique Identifiers) to meet specific requirements
+of the biodiversity information community; 2) applies to GUIDs in general; there is, or will be, a separate
+document for the applicability of each specific GUID technology. The LSID (Life Sciences Applicability
+Statement) describes how to use that technology.</em></p>
+</section>
+<section id="tdwg-access-protocol-for-information-retrieval-tapir">
+<h2>TDWG Access Protocol for Information Retrieval (TAPIR)<a class="headerlink" href="#tdwg-access-protocol-for-information-retrieval-tapir" title="Link to this heading">#</a></h2>
+<p><strong>Coming soon!</strong></p>
+<p>These terms are relevant for those who use TAPIR.  TAPIR acts as a large database for searching many disparate
+data providers.</p>
+<p><em>Official description as per `TDWG &lt;https://www.tdwg.org/standards/tapir/&gt;`_: TAPIR is a computer protocol
+designed for discovery, search and retrieval of distributed data over the Internet. TAPIR consists of a
+specification that determines how client applications seeking information should communicate with server
+applications hosting data. TAPIR is an approved TDWG standard.</em></p>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="index.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">A Guide to the Vocabulary of Biodiversity</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Explaining_Required_Terms.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Explaining Required Darwin Core Terms In the Context of Data</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#darwin-core">Darwin Core</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#audiovisual-core">Audiovisual Core</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#standards-documentation-standard-sds">Standards Documentation Standard (SDS)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#vocabulary-maintenance-standard-vms">Vocabulary Maintenance Standard (VMS)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#guid-and-life-sciences-identifiers-applicability-statements">GUID and LIfe Sciences Identifiers Applicability Statements</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#tdwg-access-protocol-for-information-retrieval-tapir">TDWG Access Protocol for Information Retrieval (TAPIR)</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright Atlas of Living Australia.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.15.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

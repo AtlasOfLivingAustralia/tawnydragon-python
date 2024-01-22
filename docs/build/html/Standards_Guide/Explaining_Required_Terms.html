@@ -1,0 +1,620 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Explaining Required Darwin Core Terms In the Context of Data &#8212; Tawnydragon 0.1.0 documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+
+  
+  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=bd9e20870c6007c4c509" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/extra.css?v=33134f48" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/extra.css?v=33134f48" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509" />
+  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=bd9e20870c6007c4c509"></script>
+
+    <script src="../_static/documentation_options.js?v=01f34227"></script>
+    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'Standards_Guide/Explaining_Required_Terms';</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Explaining Recommended Darwin Core Terms In the Context of Data" href="Explaining_Recommended_Terms.html" />
+    <link rel="prev" title="Introduction To The Available Standards" href="Introduction_to_Standards.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>
+    Back to top
+  </button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search the docs ..."
+         aria-label="Search the docs ..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <header>
+  
+    <div class="bd-header navbar navbar-expand-lg bd-navbar">
+<div class="bd-header__inner bd-page-width">
+  <label class="sidebar-toggle primary-toggle" for="__primary">
+    <span class="fa-solid fa-bars"></span>
+  </label>
+  
+  
+  <div class="col-lg-3 navbar-header-items__start">
+    
+      <div class="navbar-item">
+
+  
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../_static/logo.png" class="logo__image only-light" alt="Tawnydragon 0.1.0 documentation - Home"/>
+    <script>document.write(`<img src="../_static/logo.png" class="logo__image only-dark" alt="Tawnydragon 0.1.0 documentation - Home"/>`);</script>
+  
+  
+</a></div>
+    
+  </div>
+  
+  <div class="col-lg-9 navbar-header-items">
+    
+    <div class="me-auto navbar-header-items__center">
+      
+        <div class="navbar-item">
+<nav class="navbar-nav">
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="index.html">
+                        Standards Guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../vocab_tab/index.html">
+                        Vocabulary List
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../autoapi/tawnydragon.html">
+                        API Docs
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+      
+    </div>
+    
+    
+    <div class="navbar-header-items__end">
+      
+        <div class="navbar-item navbar-persistent--container">
+          
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+        </div>
+      
+      
+        <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+      
+        <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/AtlasOfLivingAustralia/tawnydragon-python" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+      
+    </div>
+    
+  </div>
+  
+  
+    <div class="navbar-persistent--mobile">
+
+ <script>
+ document.write(`
+   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script>
+    </div>
+  
+
+  
+    <label class="sidebar-toggle secondary-toggle" for="__secondary" tabindex="0">
+      <span class="fa-solid fa-outdent"></span>
+    </label>
+  
+</div>
+
+    </div>
+  
+  </header>
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+      <div class="sidebar-header-items__center">
+        
+          <div class="navbar-item">
+<nav class="navbar-nav">
+  <ul class="bd-navbar-elements navbar-nav">
+    
+                    <li class="nav-item current active">
+                      <a class="nav-link nav-internal" href="index.html">
+                        Standards Guide
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../vocab_tab/index.html">
+                        Vocabulary List
+                      </a>
+                    </li>
+                
+
+                    <li class="nav-item">
+                      <a class="nav-link nav-internal" href="../autoapi/tawnydragon.html">
+                        API Docs
+                      </a>
+                    </li>
+                
+  </ul>
+</nav></div>
+        
+      </div>
+    
+    
+    
+      <div class="sidebar-header-items__end">
+        
+          <div class="navbar-item">
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
+    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  </button>
+`);
+</script></div>
+        
+          <div class="navbar-item"><ul class="navbar-icon-links navbar-nav"
+    aria-label="Icon Links">
+        <li class="nav-item">
+          
+          
+          
+          
+          
+          
+          
+          
+          <a href="https://github.com/AtlasOfLivingAustralia/tawnydragon-python" title="GitHub" class="nav-link" rel="noopener" target="_blank" data-bs-toggle="tooltip" data-bs-placement="bottom"><span><i class="fa-brands fa-square-github fa-lg" aria-hidden="true"></i></span>
+            <span class="sr-only">GitHub</span></a>
+        </li>
+</ul></div>
+        
+      </div>
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+<nav class="bd-docs-nav bd-links"
+     aria-label="Section Navigation">
+  <p class="bd-links__title" role="heading" aria-level="1">Section Navigation</p>
+  <div class="bd-toc-item navbar-nav"><ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="Introduction_to_Standards.html">Introduction To The Available Standards</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">What Are Required Terms for Darwin Core?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Explaining_Recommended_Terms.html">What Are Recommended Terms for Darwin Core?</a></li>
+</ul>
+</div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item">
+
+
+
+<nav aria-label="Breadcrumb">
+  <ul class="bd-breadcrumbs">
+    
+    <li class="breadcrumb-item breadcrumb-home">
+      <a href="../index.html" class="nav-link" aria-label="Home">
+        <i class="fa-solid fa-home"></i>
+      </a>
+    </li>
+    
+    <li class="breadcrumb-item"><a href="index.html" class="nav-link">A Guide to the Vocabulary of Biodiversity</a></li>
+    
+    <li class="breadcrumb-item active" aria-current="page">Explaining...</li>
+  </ul>
+</nav>
+</div>
+      
+    </div>
+  
+  
+</div>
+</div>
+              
+              
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="explaining-required-darwin-core-terms-in-the-context-of-data">
+<h1>Explaining Required Darwin Core Terms In the Context of Data<a class="headerlink" href="#explaining-required-darwin-core-terms-in-the-context-of-data" title="Link to this heading">#</a></h1>
+<p>Those of you reading this have probably guessed that “Required Terms” are terms that you need to include in
+your data.  But what do they actually mean when they are in a dataset?</p>
+<p>Take the following example (visualised using the Python library <code class="docutils literal notranslate"><span class="pre">pandas</span></code> - example data <a class="reference download internal" download="" href="../_downloads/d00770a736fd4874429459071659fb35/data-clean.csv"><code class="xref download docutils literal notranslate"><span class="pre">here</span></code></a>)</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>                           occurrenceID        scientificName  decimalLatitude  decimalLongitude   eventDate          vernacularName taxonRank               species       genus      family      order          class      phylum  kingdom  coordinateUncertaintyInMeters geodeticDatum     basisOfRecord
+0  914ced9b-d860-4373-aa71-5d3356f442f0    Corymbia latifolia           -13.04            131.07  2022-03-29  Round-leaved Bloodwood   species    Corymbia latifolia    Corymbia   Myrtaceae   Myrtales  Equisetopsida  Charophyta  Plantae                            100         WGS84  HumanObservation
+1  d3dd23c6-43f7-428b-93b4-1e0f5807aea3  Eucalyptus tectifica           -13.04            131.07  2022-09-13                Grey Box   species  Eucalyptus tectifica  Eucalyptus   Myrtaceae   Myrtales  Equisetopsida  Charophyta  Plantae                            100         WGS84  HumanObservation
+2  572ecb59-b2e1-4926-859b-f0f617c6a5fe        Banksia aemula           -33.60            150.72  2022-08-15                Banyalla   species        Banksia aemula     Banksia  Proteaceae  Proteales  Equisetopsida  Charophyta  Plantae                            100         WGS84  HumanObservation
+3  2d3240cf-390e-4a05-b623-da1ff0d697d4   Eucalyptus racemosa           -33.60            150.72  2022-06-16            Scribbly Gum   species   Eucalyptus racemosa  Eucalyptus   Myrtaceae   Myrtales  Equisetopsida  Charophyta  Plantae                            100         WGS84  HumanObservation
+4  5b4ecdcd-271d-4bc7-ba1e-74022d1a8ab3     Persoonia laurina           -33.60            150.72  2022-10-19                     NaN   species     Persoonia laurina   Persoonia  Proteaceae  Proteales  Equisetopsida  Charophyta  Plantae                            100         WGS84  HumanObservation
+</pre></div>
+</div>
+<p>If you scroll to the right, you can see that there are a lot of columns, but why are there so many?
+And why are there so many that are required?</p>
+<section id="how-is-an-occurrence-recorded-basisofrecord">
+<h2>How is an occurrence recorded? (<code class="docutils literal notranslate"><span class="pre">basisOfRecord</span></code>)<a class="headerlink" href="#how-is-an-occurrence-recorded-basisofrecord" title="Link to this heading">#</a></h2>
+<p>Let’s now look at the column titled <code class="docutils literal notranslate"><span class="pre">basisOfRecord</span></code> (in the dataset visualised above, it is the column all the
+way to the right.)</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>0    HumanObservation
+1    HumanObservation
+2    HumanObservation
+3    HumanObservation
+4    HumanObservation
+Name: basisOfRecord, dtype: object
+</pre></div>
+</div>
+<p>The term <code class="docutils literal notranslate"><span class="pre">basisOfRecord</span></code> is not an obvious one, but it is required for all data that fits within the Darwin
+Core Standard.  It is a description of how someone recorded their observation.  For those of you who read the
+<a class="reference external" href="Introduction_to_Standards.html">Introduction To The Available Standards</a>, under “Darwin Core” it mentions
+you can specify whether the observation is via a human spotting it, if it’s a museum specimen, a sample, etc.
+For this example dataset, it is set to <code class="docutils literal notranslate"><span class="pre">HumanObservation</span></code>.  Other terms include <code class="docutils literal notranslate"><span class="pre">PreservedSpecimen</span></code> and
+<code class="docutils literal notranslate"><span class="pre">MaterialSample</span></code>.  For a full list of possible values go to the Vocabulary List and look under the “Darwin
+Core” tab.  <code class="docutils literal notranslate"><span class="pre">basisOfRecord</span></code> will be under the <em>Required</em> section, and will include examples.</p>
+</section>
+<section id="when-is-an-occurrence-recorded-eventdate">
+<h2>When is an occurrence recorded? (<code class="docutils literal notranslate"><span class="pre">eventDate</span></code>)<a class="headerlink" href="#when-is-an-occurrence-recorded-eventdate" title="Link to this heading">#</a></h2>
+<p>Now that we know how the observation was recorded, when was it recorded?  This is specified by the <code class="docutils literal notranslate"><span class="pre">eventDate</span></code>
+column.</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>0    2022-03-29
+1    2022-09-13
+2    2022-08-15
+3    2022-06-16
+4    2022-10-19
+Name: eventDate, dtype: object
+</pre></div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">eventDate</span></code> is relatively self-explanatory, where it refers to the date on which the occurrence occurred.
+This is usually in the format <code class="docutils literal notranslate"><span class="pre">YYYY-MM-DD</span></code>, or <code class="docutils literal notranslate"><span class="pre">YYYY-MM-DDTHH:MM:SS</span></code> where the <code class="docutils literal notranslate"><span class="pre">T</span></code> splits the date and
+the time.  Including the time can be particularly useful for species that are noctural.</p>
+</section>
+<section id="where-is-an-occurrence-recorded-spatial-information">
+<h2>Where is an occurrence recorded? (Spatial Information)<a class="headerlink" href="#where-is-an-occurrence-recorded-spatial-information" title="Link to this heading">#</a></h2>
+<p>Knowing where an occurrence was recorded follows describing how and when it was recorded.  However, there are a
+few extra pieces of information you need to included to make your data richer and more meaningful:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>   decimalLatitude  decimalLongitude geodeticDatum  coordinateUncertaintyInMeters
+0           -13.04            131.07         WGS84                            100
+1           -13.04            131.07         WGS84                            100
+2           -33.60            150.72         WGS84                            100
+3           -33.60            150.72         WGS84                            100
+4           -33.60            150.72         WGS84                            100
+</pre></div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">decimalLatitude</span></code> and <code class="docutils literal notranslate"><span class="pre">decimlLongitude</span></code> are pretty self-explanatory, in that they represent degrees latitude
+and degrees longitude of where the species was recorded.  Along with this is something called <code class="docutils literal notranslate"><span class="pre">coordinateUncertaintyInMeters</span></code>.
+This is the error on your latitude and longitude measurement.  For example, if you are recording a sighting using
+the GPS on your phone, this has an inherent measurement uncertainty.  The error that is most common, or most likely,
+is 100 meters, which is why that is the value in this dataset.</p>
+<p><code class="docutils literal notranslate"><span class="pre">geodeticDatum</span></code> is a term that describes a Coordinate Reference System (CRS).  A CRS is a specific way to represent
+data from a 3D spherical object (in this case, planet Earth) onto a two-dimensional surface.  As you can imagine, there
+are many ways to do this, and knowing which way you are representing these points prevents confusion between two datsets,
+as knowing the CRS could explain potential discrepancies in the data.  The Atlas of Living Australia uses the World Geodetic
+System 84, or WGS84, as shown in the dataset.  <a class="reference external" href="https://en.wikipedia.org/wiki/World_Geodetic_System">This standard</a> is
+used in satellite navigation and GPS.</p>
+</section>
+<section id="what-species-was-recorded-taxonomic-information">
+<h2>What species was recorded? (Taxonomic Information)<a class="headerlink" href="#what-species-was-recorded-taxonomic-information" title="Link to this heading">#</a></h2>
+<p>Now that we’ve answered the “When” and “Where”, we will answer the “What”.  Specifically, what species was observed?</p>
+<p>The ALA requires the following information from users, shown below in the example dataset:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">scientificName</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">taxonRank</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">kingdom</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">phylum</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">class</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">order</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">family</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">genus</span></code></p></li>
+</ul>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>         scientificName taxonRank  kingdom      phylum          class      order      family       genus
+0    Corymbia latifolia   species  Plantae  Charophyta  Equisetopsida   Myrtales   Myrtaceae    Corymbia
+1  Eucalyptus tectifica   species  Plantae  Charophyta  Equisetopsida   Myrtales   Myrtaceae  Eucalyptus
+2        Banksia aemula   species  Plantae  Charophyta  Equisetopsida  Proteales  Proteaceae     Banksia
+3   Eucalyptus racemosa   species  Plantae  Charophyta  Equisetopsida   Myrtales   Myrtaceae  Eucalyptus
+4     Persoonia laurina   species  Plantae  Charophyta  Equisetopsida  Proteales  Proteaceae   Persoonia
+</pre></div>
+</div>
+<p>This is to ensure that the species you have seen has been correctly identified according to the taxonomic backbone you
+are using.  Here, we are using the ALA backbone.  This will also help disambiguate things like homonyms, or other
+identification mistakes and errors.  Adding higher order taxa is straightforward with the <code class="docutils literal notranslate"><span class="pre">galaxias-python</span></code> package,
+though it is always a good idea to double-check your taxonomy before submitting data.  If you are concerned about any
+taxonomy suggestions/recommendations the ALA has made for your species, please email <a class="reference external" href="mailto:support&#37;&#52;&#48;ala&#46;org&#46;au">contact us</a>.</p>
+</section>
+<section id="how-can-i-make-every-observation-unique-unique-identifiers">
+<h2>How Can I Make Every Observation Unique? (Unique Identifiers)<a class="headerlink" href="#how-can-i-make-every-observation-unique-unique-identifiers" title="Link to this heading">#</a></h2>
+<p>The final requirement for every observation is a way to make your observation unique, especially in a large data repository.
+The easiest way to do this is to generate a Globally Unique Identifier (GUID) or a Universally Unique Identifier (UUID).
+There are ways to do this in <code class="docutils literal notranslate"><span class="pre">Python</span></code> or <code class="docutils literal notranslate"><span class="pre">galaxias-python</span></code>, but they should look like this:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>                           occurrenceID
+0  914ced9b-d860-4373-aa71-5d3356f442f0
+1  d3dd23c6-43f7-428b-93b4-1e0f5807aea3
+2  572ecb59-b2e1-4926-859b-f0f617c6a5fe
+3  2d3240cf-390e-4a05-b623-da1ff0d697d4
+4  5b4ecdcd-271d-4bc7-ba1e-74022d1a8ab3
+</pre></div>
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+              
+              
+              
+              
+                <footer class="prev-next-footer">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="Introduction_to_Standards.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Introduction To The Available Standards</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="Explaining_Recommended_Terms.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Explaining Recommended Darwin Core Terms In the Context of Data</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+<div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> On this page
+  </div>
+  <nav class="bd-toc-nav page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-is-an-occurrence-recorded-basisofrecord">How is an occurrence recorded? (<code class="docutils literal notranslate"><span class="pre">basisOfRecord</span></code>)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#when-is-an-occurrence-recorded-eventdate">When is an occurrence recorded? (<code class="docutils literal notranslate"><span class="pre">eventDate</span></code>)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#where-is-an-occurrence-recorded-spatial-information">Where is an occurrence recorded? (Spatial Information)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-species-was-recorded-taxonomic-information">What species was recorded? (Taxonomic Information)</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#how-can-i-make-every-observation-unique-unique-identifiers">How Can I Make Every Observation Unique? (Unique Identifiers)</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+          </footer>
+        
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/bootstrap.js?digest=bd9e20870c6007c4c509"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=bd9e20870c6007c4c509"></script>
+
+  <footer class="bd-footer">
+<div class="bd-footer__inner bd-page-width">
+  
+    <div class="footer-items__start">
+      
+        <div class="footer-item">
+
+  <p class="copyright">
+    
+      © Copyright Atlas of Living Australia.
+      <br/>
+    
+  </p>
+</div>
+      
+        <div class="footer-item">
+
+  <p class="sphinx-version">
+    Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.2.6.
+    <br/>
+  </p>
+</div>
+      
+    </div>
+  
+  
+  
+    <div class="footer-items__end">
+      
+        <div class="footer-item">
+<p class="theme-version">
+  Built with the <a href="https://pydata-sphinx-theme.readthedocs.io/en/stable/index.html">PyData Sphinx Theme</a> 0.15.1.
+</p></div>
+      
+    </div>
+  
+</div>
+
+  </footer>
+  </body>
+</html>

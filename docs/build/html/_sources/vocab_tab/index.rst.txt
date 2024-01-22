@@ -6,1137 +6,1131 @@ Vocabulary List
 
     ``Current Version:``		2023-09-18
 
-    .. dropdown:: *Required:*
+    *Required:*
 
-            .. dropdown:: basisOfRecord
+    * .. dropdown:: ``basisOfRecord``
 
-                The specific nature of the data record.
+        The specific nature of the data record.
 
-                examples: `MaterialEntity`; `PreservedSpecimen`; `FossilSpecimen`; `LivingSpecimen`; `MaterialSample`; `Event`; `HumanObservation`; `MachineObservation`; `Taxon`; `Occurrence`; `MaterialCitation`
+        examples: `MaterialEntity`; `PreservedSpecimen`; `FossilSpecimen`; `LivingSpecimen`; `MaterialSample`; `Event`; `HumanObservation`; `MachineObservation`; `Taxon`; `Occurrence`; `MaterialCitation`
 
+    * .. dropdown:: ``eventDate``
 
+        The date-time or interval during which a dwc:Event occurred. For occurrences, this is the date-time when the dwc:Event was recorded. Not suitable for a time in a geological context.
 
-            .. dropdown:: catalogNumber
+        examples: `1963-03-08T14:07-0600` (8 Mar 1963 at 2:07pm in the time zone six hours earlier than UTC); `2009-02-20T08:40Z` (20 February 2009 8:40am UTC); `2018-08-29T15:19` (3:19pm local time on 29 August 2018); `1809-02-12` (some time during 12 February 1809); `1906-06` (some time in June 1906); `1971` (some time in the year 1971); `2007-03-01T13:00:00Z/2008-05-11T15:30:00Z` (some time during the interval between 1 March 2007 1pm UTC and 11 May 2008 3:30pm UTC); `1900/1909` (some time during the interval between the beginning of the year 1900 and the end of the year 1909); `2007-11-13/15` (some time in the interval between 13 November 2007 and 15 November 2007)
 
-                An identifier (preferably unique) for the record within the data set or collection.
+    * .. dropdown:: Spatial Information
 
-                examples: `145732`; `145732a`; `2008.1334`; `R-4313`
+        * .. dropdown:: ``decimalLatitude``
 
+            The geographic latitude (in decimal degrees, using the spatial reference system given in dwc:geodeticDatum) of the geographic center of a dcterms:Location. Positive values are north of the Equator, negative values are south of it. Legal values lie between -90 and 90, inclusive.
 
+            examples: `-41.0983423`
 
-            .. dropdown:: class
+        * .. dropdown:: ``decimalLongitude``
 
-                The full scientific name of the class in which the dwc:Taxon is classified.
+            The geographic longitude (in decimal degrees, using the spatial reference system given in dwc:geodeticDatum) of the geographic center of a dcterms:Location. Positive values are east of the Greenwich Meridian, negative values are west of it. Legal values lie between -180 and 180, inclusive.
 
-                examples: `Mammalia`; `Hepaticopsida`
+            examples: `-121.1761111`
 
+        * .. dropdown:: ``geodeticDatum``
 
+            The ellipsoid, geodetic datum, or spatial reference system (SRS) upon which the geographic coordinates given in dwc:decimalLatitude and dwc:decimalLongitude are based.
 
-            .. dropdown:: coordinateUncertaintyInMeters
+            examples: `EPSG:4326`; `WGS84`; `NAD27`; `Campo Inchauspe`; `European 1950`; `Clarke 1866`; `unknown`
 
-                The horizontal distance (in meters) from the given dwc:decimalLatitude and dwc:decimalLongitude describing the smallest circle containing the whole of the dcterms:Location. Leave the value empty if the uncertainty is unknown, cannot be estimated, or is not applicable (because there are no coordinates). Zero is not a valid value for this term.
+        * .. dropdown:: ``coordinateUncertaintyInMeters``
 
-                examples: `30` (reasonable lower limit on or after 2000-05-01 of a GPS reading under good conditions if the actual precision was not recorded at the time); `100` (reasonable lower limit before 2000-05-01 of a GPS reading under good conditions if the actual precision was not recorded at the time); `71` (uncertainty for a UTM coordinate having 100 meter precision and a known spatial reference system)
+            The horizontal distance (in meters) from the given dwc:decimalLatitude and dwc:decimalLongitude describing the smallest circle containing the whole of the dcterms:Location. Leave the value empty if the uncertainty is unknown, cannot be estimated, or is not applicable (because there are no coordinates). Zero is not a valid value for this term.
 
+            examples: `30` (reasonable lower limit on or after 2000-05-01 of a GPS reading under good conditions if the actual precision was not recorded at the time); `100` (reasonable lower limit before 2000-05-01 of a GPS reading under good conditions if the actual precision was not recorded at the time); `71` (uncertainty for a UTM coordinate having 100 meter precision and a known spatial reference system)
 
+    * .. dropdown:: Unique Identifiers
 
-            .. dropdown:: decimalLatitude
+         *NOTE: CHOOSE ONLY ONE*
 
-                The geographic latitude (in decimal degrees, using the spatial reference system given in dwc:geodeticDatum) of the geographic center of a dcterms:Location. Positive values are north of the Equator, negative values are south of it. Legal values lie between -90 and 90, inclusive.
+        * .. dropdown:: ``occurrenceID``
 
-                examples: `-41.0983423`
+            An identifier for the dwc:Occurrence (as opposed to a particular digital record of the dwc:Occurrence). In the absence of a persistent global unique identifier, construct one from a combination of identifiers in the record that will most closely make the dwc:occurrenceID globally unique.
 
+            examples: `http://arctos.database.museum/guid/MSB:Mamm:233627`; `000866d2-c177-4648-a200-ead4007051b9`; `urn:catalog:UWBM:Bird:89776`
 
+        * .. dropdown:: ``catalogNumber``
 
-            .. dropdown:: decimalLongitude
+            An identifier (preferably unique) for the record within the data set or collection.
 
-                The geographic longitude (in decimal degrees, using the spatial reference system given in dwc:geodeticDatum) of the geographic center of a dcterms:Location. Positive values are east of the Greenwich Meridian, negative values are west of it. Legal values lie between -180 and 180, inclusive.
+            examples: `145732`; `145732a`; `2008.1334`; `R-4313`
 
-                examples: `-121.1761111`
+        * .. dropdown:: ``recordNumber``
 
+            An identifier given to the dwc:Occurrence at the time it was recorded. Often serves as a link between field notes and a dwc:Occurrence record, such as a specimen collector's number.
 
+            examples: `OPP 7101`
 
-            .. dropdown:: eventDate
+    * .. dropdown:: Taxonomic Information
 
-                The date-time or interval during which a dwc:Event occurred. For occurrences, this is the date-time when the dwc:Event was recorded. Not suitable for a time in a geological context.
+        * .. dropdown:: ``scientificName``
 
-                examples: `1963-03-08T14:07-0600` (8 Mar 1963 at 2:07pm in the time zone six hours earlier than UTC); `2009-02-20T08:40Z` (20 February 2009 8:40am UTC); `2018-08-29T15:19` (3:19pm local time on 29 August 2018); `1809-02-12` (some time during 12 February 1809); `1906-06` (some time in June 1906); `1971` (some time in the year 1971); `2007-03-01T13:00:00Z/2008-05-11T15:30:00Z` (some time during the interval between 1 March 2007 1pm UTC and 11 May 2008 3:30pm UTC); `1900/1909` (some time during the interval between the beginning of the year 1900 and the end of the year 1909); `2007-11-13/15` (some time in the interval between 13 November 2007 and 15 November 2007)
+            The full scientific name, with authorship and date information if known. When forming part of a dwc:Identification, this should be the name in lowest level taxonomic rank that can be determined. This term should not contain identification qualifications, which should instead be supplied in the dwc:identificationQualifier term.
 
+            examples: `Coleoptera` (order); `Vespertilionidae` (family); `Manis` (genus); `Ctenomys sociabilis` (genus + specificEpithet); `Ambystoma tigrinum diaboli` (genus + specificEpithet + infraspecificEpithet); `Roptrocerus typographi (Györfi, 1952)` (genus + specificEpithet + scientificNameAuthorship); `Quercus agrifolia var. oxyadenia (Torr.) J.T. Howell` (genus + specificEpithet + taxonRank + infraspecificEpithet + scientificNameAuthorship); `×Agropogon littoralis (Sm.) C. E. Hubb.`; `Mentha ×smithiana R. A. Graham`; `Agrostis stolonifera L. × Polypogon monspeliensis (L.) Desf.`
 
+        * .. dropdown:: ``taxonRank``
 
-            .. dropdown:: family
+            The taxonomic rank of the most specific name in the dwc:scientificName.
 
-                The full scientific name of the family in which the dwc:Taxon is classified.
+            examples: `subspecies`; `varietas`; `forma`; `species`; `genus`; `nothogenus`; `nothospecies`; `nothosubspecies`
 
-                examples: `Felidae`; `Monocleaceae`
+        * .. dropdown:: ``kingdom``
 
+            The full scientific name of the kingdom in which the dwc:Taxon is classified.
 
+            examples: `Animalia`; `Archaea`; `Bacteria`; `Chromista`; `Fungi`; `Plantae`; `Protozoa`; `Viruses`
 
-            .. dropdown:: genus
+        * .. dropdown:: ``phylum``
 
-                The full scientific name of the genus in which the dwc:Taxon is classified.
+            The full scientific name of the phylum or division in which the dwc:Taxon is classified.
 
-                examples: `Puma`; `Monoclea`
+            examples: `Chordata` (phylum); `Bryophyta` (division)
 
+        * .. dropdown:: ``class``
 
+            The full scientific name of the class in which the dwc:Taxon is classified.
 
-            .. dropdown:: geodeticDatum
+            examples: `Mammalia`; `Hepaticopsida`
 
-                The ellipsoid, geodetic datum, or spatial reference system (SRS) upon which the geographic coordinates given in dwc:decimalLatitude and dwc:decimalLongitude are based.
+        * .. dropdown:: ``order``
 
-                examples: `EPSG:4326`; `WGS84`; `NAD27`; `Campo Inchauspe`; `European 1950`; `Clarke 1866`; `unknown`
+            The full scientific name of the order in which the dwc:Taxon is classified.
 
+            examples: `Carnivora`; `Monocleales`
 
+        * .. dropdown:: ``family``
 
-            .. dropdown:: kingdom
+            The full scientific name of the superfamily in which the dwc:Taxon is classified.
 
-                The full scientific name of the kingdom in which the dwc:Taxon is classified.
+            examples: `Achatinoidea`; `Cerithioidea`; `Helicoidea`; `Hypsibioidea`; `Valvatoidea`; `Zonitoidea`
 
-                examples: `Animalia`; `Archaea`; `Bacteria`; `Chromista`; `Fungi`; `Plantae`; `Protozoa`; `Viruses`
+        * .. dropdown:: ``genus``
 
+            The full scientific name of the genus in which the dwc:Taxon is classified.
 
+            examples: `Puma`; `Monoclea`
 
-            .. dropdown:: occurrenceID
+    *Recommended:*
 
-                An identifier for the dwc:Occurrence (as opposed to a particular digital record of the dwc:Occurrence). In the absence of a persistent global unique identifier, construct one from a combination of identifiers in the record that will most closely make the dwc:occurrenceID globally unique.
+    * .. dropdown:: ``dataGeneralizations``
 
-                examples: `http://arctos.database.museum/guid/MSB:Mamm:233627`; `000866d2-c177-4648-a200-ead4007051b9`; `urn:catalog:UWBM:Bird:89776`
+        Actions taken to make the shared data less specific or complete than in its original form. Suggests that alternative data of higher quality may be available on request.
 
+        examples: `Coordinates generalized from original GPS coordinates to the nearest half degree grid cell`.
 
+    * .. dropdown:: ``informationWithheld``
 
-            .. dropdown:: order
+        Additional information that exists, but that has not been shared in the given record.
 
-                The full scientific name of the order in which the dwc:Taxon is classified.
+        examples: `location information not given for endangered species`; `collector identities withheld | ask about tissue samples`
 
-                examples: `Carnivora`; `Monocleales`
+    * .. dropdown:: Spatial Information
 
+        * .. dropdown:: ``coordinatePrecision``
 
+            A decimal representation of the precision of the coordinates given in the dwc:decimalLatitude and dwc:decimalLongitude.
 
-            .. dropdown:: phylum
+            examples: `0.00001` (normal GPS limit for decimal degrees); `0.000278` (nearest second); `0.01667` (nearest minute); `1.0` (nearest degree)
 
-                The full scientific name of the phylum or division in which the dwc:Taxon is classified.
+        * .. dropdown:: ``country``
 
-                examples: `Chordata` (phylum); `Bryophyta` (division)
+            The name of the country or major administrative unit in which the dcterms:Location occurs.
 
+            examples: `Denmark`; `Colombia`; `España`
 
+        * .. dropdown:: ``locality``
 
-            .. dropdown:: recordNumber
+            The specific description of the place.
 
-                An identifier given to the dwc:Occurrence at the time it was recorded. Often serves as a link between field notes and a dwc:Occurrence record, such as a specimen collector's number.
+            examples: `Bariloche, 25 km NNE via Ruta Nacional 40 (=Ruta 237)`; `Queets Rainforest, Olympic National Park`
 
-                examples: `OPP 7101`
+        * .. dropdown:: ``stateProvince``
 
+            The name of the next smaller administrative region than country (state, province, canton, department, region, etc.) in which the dcterms:Location occurs.
 
+            examples: `Montana`; `Minas Gerais`; `Córdoba`
 
-            .. dropdown:: scientificName
+    * .. dropdown:: Further Identification
 
-                The full scientific name, with authorship and date information if known. When forming part of a dwc:Identification, this should be the name in lowest level taxonomic rank that can be determined. This term should not contain identification qualifications, which should instead be supplied in the dwc:identificationQualifier term.
+        * .. dropdown:: ``identificationQualifier``
 
-                examples: `Coleoptera` (order); `Vespertilionidae` (family); `Manis` (genus); `Ctenomys sociabilis` (genus + specificEpithet); `Ambystoma tigrinum diaboli` (genus + specificEpithet + infraspecificEpithet); `Roptrocerus typographi (Györfi, 1952)` (genus + specificEpithet + scientificNameAuthorship); `Quercus agrifolia var. oxyadenia (Torr.) J.T. Howell` (genus + specificEpithet + taxonRank + infraspecificEpithet + scientificNameAuthorship); `×Agropogon littoralis (Sm.) C. E. Hubb.`; `Mentha ×smithiana R. A. Graham`; `Agrostis stolonifera L. × Polypogon monspeliensis (L.) Desf.`
+            A brief phrase or a standard term ("cf.", "aff.") to express the determiner's doubts about the dwc:Identification.
 
+            examples: `aff. agrifolia var. oxyadenia` (for `Quercus aff. agrifolia var. oxyadenia` with accompanying values `Quercus` in genus, `agrifolia`  in specificEpithet, `oxyadenia`  in infraspecificEpithet, and `var.` in taxonRank); `cf. var. oxyadenia` (for `Quercus agrifolia cf. var. oxyadenia` with accompanying values `Quercus` in genus, `agrifolia` in specificEpithet, `oxyadenia` in infraspecificEpithet, and `var.` in taxonRank)
 
+        * .. dropdown:: ``identificationReferences``
 
-            .. dropdown:: taxonRank
+            A list (concatenated and separated) of references (publication, global unique identifier, URI) used in the dwc:Identification.
 
-                The taxonomic rank of the most specific name in the dwc:scientificName.
+            examples: `Aves del Noroeste Patagonico. Christie et al. 2004.`; `Stebbins, R. Field Guide to Western Reptiles and Amphibians. 3rd Edition. 2003. | Irschick, D.J. and Shaffer, H.B. (1997). The polytypic species revisited: Morphological differentiation among tiger salamanders (Ambystoma tigrinum) (Amphibia: Caudata). Herpetologica, 53(1), 30-49.`
 
-                examples: `subspecies`; `varietas`; `forma`; `species`; `genus`; `nothogenus`; `nothospecies`; `nothosubspecies`
+        * .. dropdown:: ``identificationVerificationStatus``
 
+            A categorical indicator of the extent to which the taxonomic identification has been verified to be correct.
 
+            examples: `0` ("unverified" in HISPID/ABCD).
 
-    .. dropdown:: *Recommended:*
+        * .. dropdown:: ``identifiedBy``
 
-            .. dropdown:: coordinatePrecision
+            A list (concatenated and separated) of names of people, groups, or organizations who assigned the dwc:Taxon to the subject.
 
-                A decimal representation of the precision of the coordinates given in the dwc:decimalLatitude and dwc:decimalLongitude.
+            examples: `James L. Patton`; `Theodore Pappenfuss | Robert Macey`
 
-                examples: `0.00001` (normal GPS limit for decimal degrees); `0.000278` (nearest second); `0.01667` (nearest minute); `1.0` (nearest degree)
+        * .. dropdown:: ``identifiedByID``
 
-            .. dropdown:: country
+            A list (concatenated and separated) of the globally unique identifier for the person, people, groups, or organizations responsible for assigning the dwc:Taxon to the subject.
 
-                The name of the country or major administrative unit in which the dcterms:Location occurs.
+            examples: `https://orcid.org/0000-0002-1825-0097` (for an individual); `https://orcid.org/0000-0002-1825-0097 | https://orcid.org/0000-0002-1825-0098` (for a list of people)
 
-                examples: `Denmark`; `Colombia`; `España`
+    * .. dropdown:: Further Occurrence Information
 
-            .. dropdown:: dataGeneralizations
+        * .. dropdown:: ``individualCount``
 
-                Actions taken to make the shared data less specific or complete than in its original form. Suggests that alternative data of higher quality may be available on request.
+            The number of individuals present at the time of the dwc:Occurrence.
 
-                examples: `Coordinates generalized from original GPS coordinates to the nearest half degree grid cell`.
+            examples: `0`; `1`; `25`
 
-            .. dropdown:: identificationQualifier
+        * .. dropdown:: ``occurrenceStatus``
 
-                A brief phrase or a standard term ("cf.", "aff.") to express the determiner's doubts about the dwc:Identification.
+            A statement about the presence or absence of a dwc:Taxon at a dcterms:Location.
 
-                examples: `aff. agrifolia var. oxyadenia` (for `Quercus aff. agrifolia var. oxyadenia` with accompanying values `Quercus` in genus, `agrifolia`  in specificEpithet, `oxyadenia`  in infraspecificEpithet, and `var.` in taxonRank); `cf. var. oxyadenia` (for `Quercus agrifolia cf. var. oxyadenia` with accompanying values `Quercus` in genus, `agrifolia` in specificEpithet, `oxyadenia` in infraspecificEpithet, and `var.` in taxonRank)
+            examples: `present`; `absent`
 
-            .. dropdown:: identificationReferences
+        * .. dropdown:: ``recordedBy``
 
-                A list (concatenated and separated) of references (publication, global unique identifier, URI) used in the dwc:Identification.
+            A list (concatenated and separated) of names of people, groups, or organizations responsible for recording the original dwc:Occurrence. The primary collector or observer, especially one who applies a personal identifier (dwc:recordNumber), should be listed first.
 
-                examples: `Aves del Noroeste Patagonico. Christie et al. 2004.`; `Stebbins, R. Field Guide to Western Reptiles and Amphibians. 3rd Edition. 2003. | Irschick, D.J. and Shaffer, H.B. (1997). The polytypic species revisited: Morphological differentiation among tiger salamanders (Ambystoma tigrinum) (Amphibia: Caudata). Herpetologica, 53(1), 30-49.`
+            examples: `José E. Crespo`; `Oliver P. Pearson | Anita K. Pearson` (where the value in recordNumber `OPP 7101` corresponds to the collector number for the specimen in the field catalog of Oliver P. Pearson)
 
-            .. dropdown:: identificationVerificationStatus
+    * .. dropdown:: Event Information
 
-                A categorical indicator of the extent to which the taxonomic identification has been verified to be correct.
+        * .. dropdown:: ``eventID``
 
-                examples: `0` ("unverified" in HISPID/ABCD).
+            An identifier for the set of information associated with a dwc:Event (something that occurs at a place and time). May be a global unique identifier or an identifier specific to the data set.
 
-            .. dropdown:: identifiedBy
+            examples: `INBO:VIS:Ev:00009375`
 
-                A list (concatenated and separated) of names of people, groups, or organizations who assigned the dwc:Taxon to the subject.
+        * .. dropdown:: ``samplingProtocol``
 
-                examples: `James L. Patton`; `Theodore Pappenfuss | Robert Macey`
+            The names of, references to, or descriptions of the methods or protocols used during a dwc:Event.
 
-            .. dropdown:: individualCount
+            examples: `UV light trap`; `mist net`; `bottom trawl`; `ad hoc observation | point count`; `Penguins from space: faecal stains reveal the location of emperor penguin colonies, https://doi.org/10.1111/j.1466-8238.2009.00467.x`; `Takats et al. 2001. Guidelines for Nocturnal Owl Monitoring in North America. Beaverhill Bird Observatory and Bird Studies Canada, Edmonton, Alberta. 32 pp., http://www.bsc-eoc.org/download/Owl.pdf`
 
-                The number of individuals present at the time of the dwc:Occurrence.
+    *Rest:*
 
-                examples: `0`; `1`; `25`
+    * .. dropdown:: Event
 
-            .. dropdown:: informationWithheld
+        .. dropdown:: day
 
-                Additional information that exists, but that has not been shared in the given record.
+            The integer day of the month on which the dwc:Event occurred.
 
-                examples: `location information not given for endangered species`; `collector identities withheld | ask about tissue samples`
+        .. dropdown:: endDayOfYear
 
-            .. dropdown:: locality
+            The latest integer day of the year on which the dwc:Event occurred (1 for January 1, 365 for December 31, except in a leap year, in which case it is 366).
 
-                The specific description of the place.
+        .. dropdown:: eventDate
 
-                examples: `Bariloche, 25 km NNE via Ruta Nacional 40 (=Ruta 237)`; `Queets Rainforest, Olympic National Park`
+            The date-time or interval during which a dwc:Event occurred. For occurrences, this is the date-time when the dwc:Event was recorded. Not suitable for a time in a geological context.
 
-            .. dropdown:: occurrenceStatus
+        .. dropdown:: eventID
 
-                A statement about the presence or absence of a dwc:Taxon at a dcterms:Location.
+            An identifier for the set of information associated with a dwc:Event (something that occurs at a place and time). May be a global unique identifier or an identifier specific to the data set.
 
-                examples: `present`; `absent`
+        .. dropdown:: eventRemarks
 
-            .. dropdown:: recordedBy
+            Comments or notes about the dwc:Event.
 
-                A list (concatenated and separated) of names of people, groups, or organizations responsible for recording the original dwc:Occurrence. The primary collector or observer, especially one who applies a personal identifier (dwc:recordNumber), should be listed first.
+        .. dropdown:: eventTime
 
-                examples: `José E. Crespo`; `Oliver P. Pearson | Anita K. Pearson` (where the value in recordNumber `OPP 7101` corresponds to the collector number for the specimen in the field catalog of Oliver P. Pearson)
+            The time or interval during which a dwc:Event occurred.
 
-            .. dropdown:: samplingProtocol
+        .. dropdown:: eventType
 
-                The names of, references to, or descriptions of the methods or protocols used during a dwc:Event.
+            The nature of the dwc:Event.
 
-                examples: `UV light trap`; `mist net`; `bottom trawl`; `ad hoc observation | point count`; `Penguins from space: faecal stains reveal the location of emperor penguin colonies, https://doi.org/10.1111/j.1466-8238.2009.00467.x`; `Takats et al. 2001. Guidelines for Nocturnal Owl Monitoring in North America. Beaverhill Bird Observatory and Bird Studies Canada, Edmonton, Alberta. 32 pp., http://www.bsc-eoc.org/download/Owl.pdf`
+        .. dropdown:: fieldNotes
 
-            .. dropdown:: stateProvince
+            One of a) an indicator of the existence of, b) a reference to (publication, URI), or c) the text of notes taken in the field about the dwc:Event.
 
-                The name of the next smaller administrative region than country (state, province, canton, department, region, etc.) in which the dcterms:Location occurs.
+        .. dropdown:: fieldNumber
 
-                examples: `Montana`; `Minas Gerais`; `Córdoba`
+            An identifier given to the dwc:Event in the field. Often serves as a link between field notes and the dwc:Event.
 
-    .. dropdown:: *Rest:*
+        .. dropdown:: habitat
+
+            A category or description of the habitat in which the dwc:Event occurred.
+
+        .. dropdown:: month
+
+            The integer month in which the dwc:Event occurred.
+
+        .. dropdown:: parentEventID
+
+            An identifier for the broader dwc:Event that groups this and potentially other dwc:Events.
+
+        .. dropdown:: sampleSizeUnit
+
+            The unit of measurement of the size (time duration, length, area, or volume) of a sample in a sampling dwc:Event.
+
+        .. dropdown:: sampleSizeValue
+
+            A numeric value for a measurement of the size (time duration, length, area, or volume) of a sample in a sampling dwc:Event.
+
+        .. dropdown:: samplingEffort
+
+            The amount of effort expended during a dwc:Event.
+
+        .. dropdown:: samplingProtocol
+
+            The names of, references to, or descriptions of the methods or protocols used during a dwc:Event.
+
+        .. dropdown:: startDayOfYear
+
+            The earliest integer day of the year on which the dwc:Event occurred (1 for January 1, 365 for December 31, except in a leap year, in which case it is 366).
+
+        .. dropdown:: verbatimEventDate
+
+            The verbatim original representation of the date and time information for a dwc:Event.
+
+        .. dropdown:: year
+
+            The four-digit year in which the dwc:Event occurred, according to the Common Era Calendar.
+
+
+
+    * .. dropdown:: GeologicalContext
+
+        .. dropdown:: bed
+
+            The full name of the lithostratigraphic bed from which the dwc:MaterialEntity was collected.
+
+        .. dropdown:: earliestAgeOrLowestStage
+
+            The full name of the earliest possible geochronologic age or lowest chronostratigraphic stage attributable to the stratigraphic horizon from which the dwc:MaterialEntity was collected.
+
+        .. dropdown:: earliestEonOrLowestEonothem
+
+            The full name of the earliest possible geochronologic eon or lowest chrono-stratigraphic eonothem or the informal name ("Precambrian") attributable to the stratigraphic horizon from which the dwc:MaterialEntity was collected.
+
+        .. dropdown:: earliestEpochOrLowestSeries
+
+            The full name of the earliest possible geochronologic epoch or lowest chronostratigraphic series attributable to the stratigraphic horizon from which the dwc:MaterialEntity was collected.
+
+        .. dropdown:: earliestEraOrLowestErathem
+
+            The full name of the earliest possible geochronologic era or lowest chronostratigraphic erathem attributable to the stratigraphic horizon from which the dwc:MaterialEntity was collected.
+
+        .. dropdown:: earliestPeriodOrLowestSystem
+
+            The full name of the earliest possible geochronologic period or lowest chronostratigraphic system attributable to the stratigraphic horizon from which the dwc:MaterialEntity was collected.
+
+        .. dropdown:: formation
+
+            The full name of the lithostratigraphic formation from which the dwc:MaterialEntity was collected.
+
+        .. dropdown:: group
+
+            The full name of the lithostratigraphic group from which the dwc:MaterialEntity was collected.
+
+        .. dropdown:: highestBiostratigraphicZone
+
+            The full name of the highest possible geological biostratigraphic zone of the stratigraphic horizon from which the dwc:MaterialEntity was collected.
+
+        .. dropdown:: latestAgeOrHighestStage
+
+            The full name of the latest possible geochronologic age or highest chronostratigraphic stage attributable to the stratigraphic horizon from which the dwc:MaterialEntity was collected.
+
+        .. dropdown:: latestEonOrHighestEonothem
+
+            The full name of the latest possible geochronologic eon or highest chrono-stratigraphic eonothem or the informal name ("Precambrian") attributable to the stratigraphic horizon from which the dwc:MaterialEntity was collected.
+
+        .. dropdown:: latestEpochOrHighestSeries
+
+            The full name of the latest possible geochronologic epoch or highest chronostratigraphic series attributable to the stratigraphic horizon from which the dwc:MaterialEntity was collected.
+
+        .. dropdown:: latestEraOrHighestErathem
+
+            The full name of the latest possible geochronologic era or highest chronostratigraphic erathem attributable to the stratigraphic horizon from which the dwc:MaterialEntity was collected.
+
+        .. dropdown:: latestPeriodOrHighestSystem
+
+            The full name of the latest possible geochronologic period or highest chronostratigraphic system attributable to the stratigraphic horizon from which the dwc:MaterialEntity was collected.
+
+        .. dropdown:: lithostratigraphicTerms
+
+            The combination of all litho-stratigraphic names for the rock from which the dwc:MaterialEntity was collected.
+
+        .. dropdown:: lowestBiostratigraphicZone
+
+            The full name of the lowest possible geological biostratigraphic zone of the stratigraphic horizon from which the dwc:MaterialEntity was collected.
+
+        .. dropdown:: member
+
+            The full name of the lithostratigraphic member from which the dwc:MaterialEntity was collected.
+
+        .. dropdown:: geologicalContextID
+
+            An identifier for the set of information associated with a dwc:GeologicalContext (the location within a geological context, such as stratigraphy). May be a global unique identifier or an identifier specific to the data set.
+
+
+
+    * .. dropdown:: Identification
+
+        .. dropdown:: dateIdentified
+
+            The date on which the subject was determined as representing the dwc:Taxon.
+
+        .. dropdown:: identificationID
+
+            An identifier for the dwc:Identification (the body of information associated with the assignment of a scientific name). May be a global unique identifier or an identifier specific to the data set.
+
+        .. dropdown:: identificationQualifier
+
+            A brief phrase or a standard term ("cf.", "aff.") to express the determiner's doubts about the dwc:Identification.
+
+        .. dropdown:: identificationReferences
+
+            A list (concatenated and separated) of references (publication, global unique identifier, URI) used in the dwc:Identification.
+
+        .. dropdown:: identificationRemarks
+
+            Comments or notes about the dwc:Identification.
+
+        .. dropdown:: identificationVerificationStatus
+
+            A categorical indicator of the extent to which the taxonomic identification has been verified to be correct.
+
+        .. dropdown:: identifiedBy
+
+            A list (concatenated and separated) of names of people, groups, or organizations who assigned the dwc:Taxon to the subject.
+
+        .. dropdown:: identifiedByID
+
+            A list (concatenated and separated) of the globally unique identifier for the person, people, groups, or organizations responsible for assigning the dwc:Taxon to the subject.
+
+        .. dropdown:: typeStatus
+
+            A list (concatenated and separated) of nomenclatural types (type status, typified scientific name, publication) applied to the subject.
+
+        .. dropdown:: verbatimIdentification
+
+            A string representing the taxonomic identification as it appeared in the original record.
+
+
+
+    * .. dropdown:: Location
+
+        .. dropdown:: continent
+
+            The name of the continent in which the dcterms:Location occurs.
+
+        .. dropdown:: coordinatePrecision
+
+            A decimal representation of the precision of the coordinates given in the dwc:decimalLatitude and dwc:decimalLongitude.
+
+        .. dropdown:: coordinateUncertaintyInMeters
+
+            The horizontal distance (in meters) from the given dwc:decimalLatitude and dwc:decimalLongitude describing the smallest circle containing the whole of the dcterms:Location. Leave the value empty if the uncertainty is unknown, cannot be estimated, or is not applicable (because there are no coordinates). Zero is not a valid value for this term.
+
+        .. dropdown:: country
+
+            The name of the country or major administrative unit in which the dcterms:Location occurs.
+
+        .. dropdown:: countryCode
+
+            The standard code for the country in which the dcterms:Location occurs.
+
+        .. dropdown:: county
+
+            The full, unabbreviated name of the next smaller administrative region than stateProvince (county, shire, department, etc.) in which the dcterms:Location occurs.
+
+        .. dropdown:: decimalLatitude
+
+            The geographic latitude (in decimal degrees, using the spatial reference system given in dwc:geodeticDatum) of the geographic center of a dcterms:Location. Positive values are north of the Equator, negative values are south of it. Legal values lie between -90 and 90, inclusive.
+
+        .. dropdown:: decimalLongitude
+
+            The geographic longitude (in decimal degrees, using the spatial reference system given in dwc:geodeticDatum) of the geographic center of a dcterms:Location. Positive values are east of the Greenwich Meridian, negative values are west of it. Legal values lie between -180 and 180, inclusive.
+
+        .. dropdown:: footprintSRS
+
+            The ellipsoid, geodetic datum, or spatial reference system (SRS) upon which the geometry given in dwc:footprintWKT is based.
+
+        .. dropdown:: footprintSpatialFit
+
+            The ratio of the area of the dwc:footprintWKT to the area of the true (original, or most specific) spatial representation of the dcterms:Location. Legal values are 0, greater than or equal to 1, or undefined. A value of 1 is an exact match or 100% overlap. A value of 0 should be used if the given dwc:footprintWKT does not completely contain the original representation. The dwc:footprintSpatialFit is undefined (and should be left empty) if the original representation is any geometry without area (e.g., a point or polyline) and without uncertainty and the given georeference is not that same geometry (without uncertainty). If both the original and the given georeference are the same point, the dwc:footprintSpatialFit is 1.
+
+        .. dropdown:: footprintWKT
+
+            A Well-Known Text (WKT) representation of the shape (footprint, geometry) that defines the dcterms:Location. A dcterms:Location may have both a point-radius representation (see dwc:decimalLatitude) and a footprint representation, and they may differ from each other.
+
+        .. dropdown:: geodeticDatum
+
+            The ellipsoid, geodetic datum, or spatial reference system (SRS) upon which the geographic coordinates given in dwc:decimalLatitude and dwc:decimalLongitude are based.
+
+        .. dropdown:: georeferenceProtocol
+
+            A description or reference to the methods used to determine the spatial footprint, coordinates, and uncertainties.
+
+        .. dropdown:: georeferenceRemarks
+
+            Notes or comments about the spatial description determination, explaining assumptions made in addition or opposition to the those formalized in the method referred to in dwc:georeferenceProtocol.
+
+        .. dropdown:: georeferenceSources
+
+            A list (concatenated and separated) of maps, gazetteers, or other resources used to georeference the dcterms:Location, described specifically enough to allow anyone in the future to use the same resources.
+
+        .. dropdown:: georeferencedBy
+
+            A list (concatenated and separated) of names of people, groups, or organizations who determined the georeference (spatial representation) for the dcterms:Location.
+
+        .. dropdown:: georeferencedDate
+
+            The date on which the dcterms:Location was georeferenced.
+
+        .. dropdown:: higherGeography
+
+            A list (concatenated and separated) of geographic names less specific than the information captured in the dwc:locality term.
+
+        .. dropdown:: higherGeographyID
+
+            An identifier for the geographic region within which the dcterms:Location occurred.
+
+        .. dropdown:: island
+
+            The name of the island on or near which the dcterms:Location occurs.
+
+        .. dropdown:: islandGroup
+
+            The name of the island group in which the dcterms:Location occurs.
+
+        .. dropdown:: locality
+
+            The specific description of the place.
+
+        .. dropdown:: locationAccordingTo
+
+            Information about the source of this dcterms:Location information. Could be a publication (gazetteer), institution, or team of individuals.
+
+        .. dropdown:: locationID
+
+            An identifier for the set of dcterms:Location information. May be a global unique identifier or an identifier specific to the data set.
+
+        .. dropdown:: locationRemarks
+
+            Comments or notes about the dcterms:Location.
+
+        .. dropdown:: maximumDepthInMeters
+
+            The greater depth of a range of depth below the local surface, in meters.
+
+        .. dropdown:: maximumDistanceAboveSurfaceInMeters
+
+            The greater distance in a range of distance from a reference surface in the vertical direction, in meters. Use positive values for locations above the surface, negative values for locations below. If depth measures are given, the reference surface is the location given by the depth, otherwise the reference surface is the location given by the elevation.
+
+        .. dropdown:: maximumElevationInMeters
+
+            The upper limit of the range of elevation (altitude, usually above sea level), in meters.
+
+        .. dropdown:: minimumDepthInMeters
+
+            The lesser depth of a range of depth below the local surface, in meters.
+
+        .. dropdown:: minimumDistanceAboveSurfaceInMeters
+
+            The lesser distance in a range of distance from a reference surface in the vertical direction, in meters. Use positive values for locations above the surface, negative values for locations below. If depth measures are given, the reference surface is the location given by the depth, otherwise the reference surface is the location given by the elevation.
+
+        .. dropdown:: minimumElevationInMeters
+
+            The lower limit of the range of elevation (altitude, usually above sea level), in meters.
+
+        .. dropdown:: municipality
+
+            The full, unabbreviated name of the next smaller administrative region than county (city, municipality, etc.) in which the dcterms:Location occurs. Do not use this term for a nearby named place that does not contain the actual dcterms:Location.
+
+        .. dropdown:: pointRadiusSpatialFit
+
+            The ratio of the area of the point-radius (dwc:decimalLatitude, dwc:decimalLongitude, dwc:coordinateUncertaintyInMeters) to the area of the true (original, or most specific) spatial representation of the dcterms:Location. Legal values are 0, greater than or equal to 1, or undefined. A value of 1 is an exact match or 100% overlap. A value of 0 should be used if the given point-radius does not completely contain the original representation. The dwc:pointRadiusSpatialFit is undefined (and should be left empty) if the original representation is any geometry without area (e.g., a point or polyline) and without uncertainty and the given georeference is not that same geometry (without uncertainty). If both the original and the given georeference are the same point, the dwc:pointRadiusSpatialFit is 1.
+
+        .. dropdown:: stateProvince
+
+            The name of the next smaller administrative region than country (state, province, canton, department, region, etc.) in which the dcterms:Location occurs.
+
+        .. dropdown:: verbatimCoordinateSystem
+
+            The coordinate format for the dwc:verbatimLatitude and dwc:verbatimLongitude or the dwc:verbatimCoordinates of the dcterms:Location.
+
+        .. dropdown:: verbatimCoordinates
+
+            The verbatim original spatial coordinates of the dcterms:Location. The coordinate ellipsoid, geodeticDatum, or full Spatial Reference System (SRS) for these coordinates should be stored in dwc:verbatimSRS and the coordinate system should be stored in dwc:verbatimCoordinateSystem.
+
+        .. dropdown:: verbatimLatitude
+
+            The verbatim original latitude of the dcterms:Location. The coordinate ellipsoid, geodeticDatum, or full Spatial Reference System (SRS) for these coordinates should be stored in dwc:verbatimSRS and the coordinate system should be stored in dwc:verbatimCoordinateSystem.
+
+        .. dropdown:: verbatimLongitude
+
+            The verbatim original longitude of the dcterms:Location. The coordinate ellipsoid, geodeticDatum, or full Spatial Reference System (SRS) for these coordinates should be stored in dwc:verbatimSRS and the coordinate system should be stored in dwc:verbatimCoordinateSystem.
+
+        .. dropdown:: verbatimSRS
+
+            The ellipsoid, geodetic datum, or spatial reference system (SRS) upon which coordinates given in dwc:verbatimLatitude and dwc:verbatimLongitude, or dwc:verbatimCoordinates are based.
+
+        .. dropdown:: verticalDatum
+
+            The vertical datum used as the reference upon which the values in the elevation terms are based.
+
+        .. dropdown:: waterBody
+
+            The name of the water body in which the dcterms:Location occurs.
+
+        .. dropdown:: verbatimLocality
+
+            The original textual description of the place.
+
+        .. dropdown:: verbatimDepth
+
+            The original description of the depth below the local surface.
+
+        .. dropdown:: verbatimElevation
+
+            The original description of the elevation (altitude, usually above sea level) of the Location.
+
+
+
+    * .. dropdown:: MaterialEntity
+
+        .. dropdown:: associatedSequences
+
+            A list (concatenated and separated) of identifiers (publication, global unique identifier, URI) of genetic sequence information associated with the dwc:MaterialEntity.
+
+        .. dropdown:: disposition
+
+            The current state of a dwc:MaterialEntity with respect to a collection.
+
+        .. dropdown:: materialEntityID
+
+            An identifier for a particular instance of a dwc:MaterialEntity.
+
+        .. dropdown:: materialEntityRemarks
+
+            Comments or notes about the dwc:MaterialEntity instance.
+
+        .. dropdown:: preparations
+
+            A list (concatenated and separated) of preparations and preservation methods for a dwc:MaterialEntity.
+
+        .. dropdown:: verbatimLabel
+
+            The content of this term should include no embellishments, prefixes, headers or other additions made to the text. Abbreviations must not be expanded and supposed misspellings must not be corrected. Lines or breakpoints between blocks of text that could be verified by seeing the original labels or images of them may be used. Examples of material entities include preserved specimens, fossil specimens, and material samples. Best practice is to use UTF-8 for all characters. Best practice is to add comment “verbatimLabel derived from human transcription” in dwc:occurrenceRemarks.
+
+
+
+    * .. dropdown:: MaterialSample
+
+        .. dropdown:: materialSampleID
+
+            An identifier for the dwc:MaterialSample (as opposed to a particular digital record of the dwc:MaterialSample). In the absence of a persistent global unique identifier, construct one from a combination of identifiers in the record that will most closely make the dwc:materialSampleID globally unique.
+
+
+
+    * .. dropdown:: MeasurementOrFact
+
+        .. dropdown:: measurementAccuracy
+
+            The description of the potential error associated with the dwc:measurementValue.
+
+        .. dropdown:: measurementDeterminedBy
+
+            A list (concatenated and separated) of names of people, groups, or organizations who determined the value of the dwc:MeasurementOrFact.
+
+        .. dropdown:: measurementDeterminedDate
+
+            The date on which the dwc:MeasurementOrFact was made.
+
+        .. dropdown:: measurementID
+
+            An identifier for the dwc:MeasurementOrFact (information pertaining to measurements, facts, characteristics, or assertions). May be a global unique identifier or an identifier specific to the data set.
+
+        .. dropdown:: measurementMethod
+
+            A description of or reference to (publication, URI) the method or protocol used to determine the measurement, fact, characteristic, or assertion.
+
+        .. dropdown:: measurementRemarks
+
+            Comments or notes accompanying the dwc:MeasurementOrFact.
+
+        .. dropdown:: measurementType
+
+            The nature of the measurement, fact, characteristic, or assertion.
+
+        .. dropdown:: measurementUnit
+
+            The units associated with the dwc:measurementValue.
+
+        .. dropdown:: measurementValue
+
+            The value of the measurement, fact, characteristic, or assertion.
+
+        .. dropdown:: parentMeasurementID
+
+            An identifier for a broader dwc:MeasurementOrFact that groups this and potentially other dwc:MeasurementOrFacts.
+
+
+
+    * .. dropdown:: No Parent Class
 
         .. dropdown:: Event
 
-            .. dropdown:: day
+            An action that occurs at some location during some time.
 
-                The integer day of the month on which the dwc:Event occurred.
+        .. dropdown:: FossilSpecimen
 
-            .. dropdown:: endDayOfYear
-
-                The latest integer day of the year on which the dwc:Event occurred (1 for January 1, 365 for December 31, except in a leap year, in which case it is 366).
-
-            .. dropdown:: eventDate
-
-                The date-time or interval during which a dwc:Event occurred. For occurrences, this is the date-time when the dwc:Event was recorded. Not suitable for a time in a geological context.
-
-            .. dropdown:: eventID
-
-                An identifier for the set of information associated with a dwc:Event (something that occurs at a place and time). May be a global unique identifier or an identifier specific to the data set.
-
-            .. dropdown:: eventRemarks
-
-                Comments or notes about the dwc:Event.
-
-            .. dropdown:: eventTime
-
-                The time or interval during which a dwc:Event occurred.
-
-            .. dropdown:: eventType
-
-                The nature of the dwc:Event.
-
-            .. dropdown:: fieldNotes
-
-                One of a) an indicator of the existence of, b) a reference to (publication, URI), or c) the text of notes taken in the field about the dwc:Event.
-
-            .. dropdown:: fieldNumber
-
-                An identifier given to the dwc:Event in the field. Often serves as a link between field notes and the dwc:Event.
-
-            .. dropdown:: habitat
-
-                A category or description of the habitat in which the dwc:Event occurred.
-
-            .. dropdown:: month
-
-                The integer month in which the dwc:Event occurred.
-
-            .. dropdown:: parentEventID
-
-                An identifier for the broader dwc:Event that groups this and potentially other dwc:Events.
-
-            .. dropdown:: sampleSizeUnit
-
-                The unit of measurement of the size (time duration, length, area, or volume) of a sample in a sampling dwc:Event.
-
-            .. dropdown:: sampleSizeValue
-
-                A numeric value for a measurement of the size (time duration, length, area, or volume) of a sample in a sampling dwc:Event.
-
-            .. dropdown:: samplingEffort
-
-                The amount of effort expended during a dwc:Event.
-
-            .. dropdown:: samplingProtocol
-
-                The names of, references to, or descriptions of the methods or protocols used during a dwc:Event.
-
-            .. dropdown:: startDayOfYear
-
-                The earliest integer day of the year on which the dwc:Event occurred (1 for January 1, 365 for December 31, except in a leap year, in which case it is 366).
-
-            .. dropdown:: verbatimEventDate
-
-                The verbatim original representation of the date and time information for a dwc:Event.
-
-            .. dropdown:: year
-
-                The four-digit year in which the dwc:Event occurred, according to the Common Era Calendar.
-
-
+            A preserved specimen that is a fossil.
 
         .. dropdown:: GeologicalContext
 
-            .. dropdown:: bed
+            Geological information, such as stratigraphy, that qualifies a region or place.
 
-                The full name of the lithostratigraphic bed from which the dwc:MaterialEntity was collected.
+        .. dropdown:: HumanObservation
 
-            .. dropdown:: earliestAgeOrLowestStage
-
-                The full name of the earliest possible geochronologic age or lowest chronostratigraphic stage attributable to the stratigraphic horizon from which the dwc:MaterialEntity was collected.
-
-            .. dropdown:: earliestEonOrLowestEonothem
-
-                The full name of the earliest possible geochronologic eon or lowest chrono-stratigraphic eonothem or the informal name ("Precambrian") attributable to the stratigraphic horizon from which the dwc:MaterialEntity was collected.
-
-            .. dropdown:: earliestEpochOrLowestSeries
-
-                The full name of the earliest possible geochronologic epoch or lowest chronostratigraphic series attributable to the stratigraphic horizon from which the dwc:MaterialEntity was collected.
-
-            .. dropdown:: earliestEraOrLowestErathem
-
-                The full name of the earliest possible geochronologic era or lowest chronostratigraphic erathem attributable to the stratigraphic horizon from which the dwc:MaterialEntity was collected.
-
-            .. dropdown:: earliestPeriodOrLowestSystem
-
-                The full name of the earliest possible geochronologic period or lowest chronostratigraphic system attributable to the stratigraphic horizon from which the dwc:MaterialEntity was collected.
-
-            .. dropdown:: formation
-
-                The full name of the lithostratigraphic formation from which the dwc:MaterialEntity was collected.
-
-            .. dropdown:: group
-
-                The full name of the lithostratigraphic group from which the dwc:MaterialEntity was collected.
-
-            .. dropdown:: highestBiostratigraphicZone
-
-                The full name of the highest possible geological biostratigraphic zone of the stratigraphic horizon from which the dwc:MaterialEntity was collected.
-
-            .. dropdown:: latestAgeOrHighestStage
-
-                The full name of the latest possible geochronologic age or highest chronostratigraphic stage attributable to the stratigraphic horizon from which the dwc:MaterialEntity was collected.
-
-            .. dropdown:: latestEonOrHighestEonothem
-
-                The full name of the latest possible geochronologic eon or highest chrono-stratigraphic eonothem or the informal name ("Precambrian") attributable to the stratigraphic horizon from which the dwc:MaterialEntity was collected.
-
-            .. dropdown:: latestEpochOrHighestSeries
-
-                The full name of the latest possible geochronologic epoch or highest chronostratigraphic series attributable to the stratigraphic horizon from which the dwc:MaterialEntity was collected.
-
-            .. dropdown:: latestEraOrHighestErathem
-
-                The full name of the latest possible geochronologic era or highest chronostratigraphic erathem attributable to the stratigraphic horizon from which the dwc:MaterialEntity was collected.
-
-            .. dropdown:: latestPeriodOrHighestSystem
-
-                The full name of the latest possible geochronologic period or highest chronostratigraphic system attributable to the stratigraphic horizon from which the dwc:MaterialEntity was collected.
-
-            .. dropdown:: lithostratigraphicTerms
-
-                The combination of all litho-stratigraphic names for the rock from which the dwc:MaterialEntity was collected.
-
-            .. dropdown:: lowestBiostratigraphicZone
-
-                The full name of the lowest possible geological biostratigraphic zone of the stratigraphic horizon from which the dwc:MaterialEntity was collected.
-
-            .. dropdown:: member
-
-                The full name of the lithostratigraphic member from which the dwc:MaterialEntity was collected.
-
-            .. dropdown:: geologicalContextID
-
-                An identifier for the set of information associated with a dwc:GeologicalContext (the location within a geological context, such as stratigraphy). May be a global unique identifier or an identifier specific to the data set.
-
-
+            An output of a human observation process.
 
         .. dropdown:: Identification
 
-            .. dropdown:: dateIdentified
+            A taxonomic determination (e.g., the assignment to a dwc:Taxon).
 
-                The date on which the subject was determined as representing the dwc:Taxon.
+        .. dropdown:: LivingSpecimen
 
-            .. dropdown:: identificationID
+            A specimen that is alive.
 
-                An identifier for the dwc:Identification (the body of information associated with the assignment of a scientific name). May be a global unique identifier or an identifier specific to the data set.
+        .. dropdown:: MachineObservation
 
-            .. dropdown:: identificationQualifier
+            An output of a machine observation process.
 
-                A brief phrase or a standard term ("cf.", "aff.") to express the determiner's doubts about the dwc:Identification.
+        .. dropdown:: MaterialCitation
 
-            .. dropdown:: identificationReferences
-
-                A list (concatenated and separated) of references (publication, global unique identifier, URI) used in the dwc:Identification.
-
-            .. dropdown:: identificationRemarks
-
-                Comments or notes about the dwc:Identification.
-
-            .. dropdown:: identificationVerificationStatus
-
-                A categorical indicator of the extent to which the taxonomic identification has been verified to be correct.
-
-            .. dropdown:: identifiedBy
-
-                A list (concatenated and separated) of names of people, groups, or organizations who assigned the dwc:Taxon to the subject.
-
-            .. dropdown:: identifiedByID
-
-                A list (concatenated and separated) of the globally unique identifier for the person, people, groups, or organizations responsible for assigning the dwc:Taxon to the subject.
-
-            .. dropdown:: typeStatus
-
-                A list (concatenated and separated) of nomenclatural types (type status, typified scientific name, publication) applied to the subject.
-
-            .. dropdown:: verbatimIdentification
-
-                A string representing the taxonomic identification as it appeared in the original record.
-
-
-
-        .. dropdown:: Location
-
-            .. dropdown:: continent
-
-                The name of the continent in which the dcterms:Location occurs.
-
-            .. dropdown:: coordinatePrecision
-
-                A decimal representation of the precision of the coordinates given in the dwc:decimalLatitude and dwc:decimalLongitude.
-
-            .. dropdown:: coordinateUncertaintyInMeters
-
-                The horizontal distance (in meters) from the given dwc:decimalLatitude and dwc:decimalLongitude describing the smallest circle containing the whole of the dcterms:Location. Leave the value empty if the uncertainty is unknown, cannot be estimated, or is not applicable (because there are no coordinates). Zero is not a valid value for this term.
-
-            .. dropdown:: country
-
-                The name of the country or major administrative unit in which the dcterms:Location occurs.
-
-            .. dropdown:: countryCode
-
-                The standard code for the country in which the dcterms:Location occurs.
-
-            .. dropdown:: county
-
-                The full, unabbreviated name of the next smaller administrative region than stateProvince (county, shire, department, etc.) in which the dcterms:Location occurs.
-
-            .. dropdown:: decimalLatitude
-
-                The geographic latitude (in decimal degrees, using the spatial reference system given in dwc:geodeticDatum) of the geographic center of a dcterms:Location. Positive values are north of the Equator, negative values are south of it. Legal values lie between -90 and 90, inclusive.
-
-            .. dropdown:: decimalLongitude
-
-                The geographic longitude (in decimal degrees, using the spatial reference system given in dwc:geodeticDatum) of the geographic center of a dcterms:Location. Positive values are east of the Greenwich Meridian, negative values are west of it. Legal values lie between -180 and 180, inclusive.
-
-            .. dropdown:: footprintSRS
-
-                The ellipsoid, geodetic datum, or spatial reference system (SRS) upon which the geometry given in dwc:footprintWKT is based.
-
-            .. dropdown:: footprintSpatialFit
-
-                The ratio of the area of the dwc:footprintWKT to the area of the true (original, or most specific) spatial representation of the dcterms:Location. Legal values are 0, greater than or equal to 1, or undefined. A value of 1 is an exact match or 100% overlap. A value of 0 should be used if the given dwc:footprintWKT does not completely contain the original representation. The dwc:footprintSpatialFit is undefined (and should be left empty) if the original representation is any geometry without area (e.g., a point or polyline) and without uncertainty and the given georeference is not that same geometry (without uncertainty). If both the original and the given georeference are the same point, the dwc:footprintSpatialFit is 1.
-
-            .. dropdown:: footprintWKT
-
-                A Well-Known Text (WKT) representation of the shape (footprint, geometry) that defines the dcterms:Location. A dcterms:Location may have both a point-radius representation (see dwc:decimalLatitude) and a footprint representation, and they may differ from each other.
-
-            .. dropdown:: geodeticDatum
-
-                The ellipsoid, geodetic datum, or spatial reference system (SRS) upon which the geographic coordinates given in dwc:decimalLatitude and dwc:decimalLongitude are based.
-
-            .. dropdown:: georeferenceProtocol
-
-                A description or reference to the methods used to determine the spatial footprint, coordinates, and uncertainties.
-
-            .. dropdown:: georeferenceRemarks
-
-                Notes or comments about the spatial description determination, explaining assumptions made in addition or opposition to the those formalized in the method referred to in dwc:georeferenceProtocol.
-
-            .. dropdown:: georeferenceSources
-
-                A list (concatenated and separated) of maps, gazetteers, or other resources used to georeference the dcterms:Location, described specifically enough to allow anyone in the future to use the same resources.
-
-            .. dropdown:: georeferencedBy
-
-                A list (concatenated and separated) of names of people, groups, or organizations who determined the georeference (spatial representation) for the dcterms:Location.
-
-            .. dropdown:: georeferencedDate
-
-                The date on which the dcterms:Location was georeferenced.
-
-            .. dropdown:: higherGeography
-
-                A list (concatenated and separated) of geographic names less specific than the information captured in the dwc:locality term.
-
-            .. dropdown:: higherGeographyID
-
-                An identifier for the geographic region within which the dcterms:Location occurred.
-
-            .. dropdown:: island
-
-                The name of the island on or near which the dcterms:Location occurs.
-
-            .. dropdown:: islandGroup
-
-                The name of the island group in which the dcterms:Location occurs.
-
-            .. dropdown:: locality
-
-                The specific description of the place.
-
-            .. dropdown:: locationAccordingTo
-
-                Information about the source of this dcterms:Location information. Could be a publication (gazetteer), institution, or team of individuals.
-
-            .. dropdown:: locationID
-
-                An identifier for the set of dcterms:Location information. May be a global unique identifier or an identifier specific to the data set.
-
-            .. dropdown:: locationRemarks
-
-                Comments or notes about the dcterms:Location.
-
-            .. dropdown:: maximumDepthInMeters
-
-                The greater depth of a range of depth below the local surface, in meters.
-
-            .. dropdown:: maximumDistanceAboveSurfaceInMeters
-
-                The greater distance in a range of distance from a reference surface in the vertical direction, in meters. Use positive values for locations above the surface, negative values for locations below. If depth measures are given, the reference surface is the location given by the depth, otherwise the reference surface is the location given by the elevation.
-
-            .. dropdown:: maximumElevationInMeters
-
-                The upper limit of the range of elevation (altitude, usually above sea level), in meters.
-
-            .. dropdown:: minimumDepthInMeters
-
-                The lesser depth of a range of depth below the local surface, in meters.
-
-            .. dropdown:: minimumDistanceAboveSurfaceInMeters
-
-                The lesser distance in a range of distance from a reference surface in the vertical direction, in meters. Use positive values for locations above the surface, negative values for locations below. If depth measures are given, the reference surface is the location given by the depth, otherwise the reference surface is the location given by the elevation.
-
-            .. dropdown:: minimumElevationInMeters
-
-                The lower limit of the range of elevation (altitude, usually above sea level), in meters.
-
-            .. dropdown:: municipality
-
-                The full, unabbreviated name of the next smaller administrative region than county (city, municipality, etc.) in which the dcterms:Location occurs. Do not use this term for a nearby named place that does not contain the actual dcterms:Location.
-
-            .. dropdown:: pointRadiusSpatialFit
-
-                The ratio of the area of the point-radius (dwc:decimalLatitude, dwc:decimalLongitude, dwc:coordinateUncertaintyInMeters) to the area of the true (original, or most specific) spatial representation of the dcterms:Location. Legal values are 0, greater than or equal to 1, or undefined. A value of 1 is an exact match or 100% overlap. A value of 0 should be used if the given point-radius does not completely contain the original representation. The dwc:pointRadiusSpatialFit is undefined (and should be left empty) if the original representation is any geometry without area (e.g., a point or polyline) and without uncertainty and the given georeference is not that same geometry (without uncertainty). If both the original and the given georeference are the same point, the dwc:pointRadiusSpatialFit is 1.
-
-            .. dropdown:: stateProvince
-
-                The name of the next smaller administrative region than country (state, province, canton, department, region, etc.) in which the dcterms:Location occurs.
-
-            .. dropdown:: verbatimCoordinateSystem
-
-                The coordinate format for the dwc:verbatimLatitude and dwc:verbatimLongitude or the dwc:verbatimCoordinates of the dcterms:Location.
-
-            .. dropdown:: verbatimCoordinates
-
-                The verbatim original spatial coordinates of the dcterms:Location. The coordinate ellipsoid, geodeticDatum, or full Spatial Reference System (SRS) for these coordinates should be stored in dwc:verbatimSRS and the coordinate system should be stored in dwc:verbatimCoordinateSystem.
-
-            .. dropdown:: verbatimLatitude
-
-                The verbatim original latitude of the dcterms:Location. The coordinate ellipsoid, geodeticDatum, or full Spatial Reference System (SRS) for these coordinates should be stored in dwc:verbatimSRS and the coordinate system should be stored in dwc:verbatimCoordinateSystem.
-
-            .. dropdown:: verbatimLongitude
-
-                The verbatim original longitude of the dcterms:Location. The coordinate ellipsoid, geodeticDatum, or full Spatial Reference System (SRS) for these coordinates should be stored in dwc:verbatimSRS and the coordinate system should be stored in dwc:verbatimCoordinateSystem.
-
-            .. dropdown:: verbatimSRS
-
-                The ellipsoid, geodetic datum, or spatial reference system (SRS) upon which coordinates given in dwc:verbatimLatitude and dwc:verbatimLongitude, or dwc:verbatimCoordinates are based.
-
-            .. dropdown:: verticalDatum
-
-                The vertical datum used as the reference upon which the values in the elevation terms are based.
-
-            .. dropdown:: waterBody
-
-                The name of the water body in which the dcterms:Location occurs.
-
-            .. dropdown:: verbatimLocality
-
-                The original textual description of the place.
-
-            .. dropdown:: verbatimDepth
-
-                The original description of the depth below the local surface.
-
-            .. dropdown:: verbatimElevation
-
-                The original description of the elevation (altitude, usually above sea level) of the Location.
-
-
-
-        .. dropdown:: MaterialEntity
-
-            .. dropdown:: associatedSequences
-
-                A list (concatenated and separated) of identifiers (publication, global unique identifier, URI) of genetic sequence information associated with the dwc:MaterialEntity.
-
-            .. dropdown:: disposition
-
-                The current state of a dwc:MaterialEntity with respect to a collection.
-
-            .. dropdown:: materialEntityID
-
-                An identifier for a particular instance of a dwc:MaterialEntity.
-
-            .. dropdown:: materialEntityRemarks
-
-                Comments or notes about the dwc:MaterialEntity instance.
-
-            .. dropdown:: preparations
-
-                A list (concatenated and separated) of preparations and preservation methods for a dwc:MaterialEntity.
-
-            .. dropdown:: verbatimLabel
-
-                The content of this term should include no embellishments, prefixes, headers or other additions made to the text. Abbreviations must not be expanded and supposed misspellings must not be corrected. Lines or breakpoints between blocks of text that could be verified by seeing the original labels or images of them may be used. Examples of material entities include preserved specimens, fossil specimens, and material samples. Best practice is to use UTF-8 for all characters. Best practice is to add comment “verbatimLabel derived from human transcription” in dwc:occurrenceRemarks.
-
-
-
-        .. dropdown:: MaterialSample
-
-            .. dropdown:: materialSampleID
-
-                An identifier for the dwc:MaterialSample (as opposed to a particular digital record of the dwc:MaterialSample). In the absence of a persistent global unique identifier, construct one from a combination of identifiers in the record that will most closely make the dwc:materialSampleID globally unique.
-
-
-
-        .. dropdown:: MeasurementOrFact
-
-            .. dropdown:: measurementAccuracy
-
-                The description of the potential error associated with the dwc:measurementValue.
-
-            .. dropdown:: measurementDeterminedBy
-
-                A list (concatenated and separated) of names of people, groups, or organizations who determined the value of the dwc:MeasurementOrFact.
-
-            .. dropdown:: measurementDeterminedDate
-
-                The date on which the dwc:MeasurementOrFact was made.
-
-            .. dropdown:: measurementID
-
-                An identifier for the dwc:MeasurementOrFact (information pertaining to measurements, facts, characteristics, or assertions). May be a global unique identifier or an identifier specific to the data set.
-
-            .. dropdown:: measurementMethod
-
-                A description of or reference to (publication, URI) the method or protocol used to determine the measurement, fact, characteristic, or assertion.
-
-            .. dropdown:: measurementRemarks
-
-                Comments or notes accompanying the dwc:MeasurementOrFact.
-
-            .. dropdown:: measurementType
-
-                The nature of the measurement, fact, characteristic, or assertion.
-
-            .. dropdown:: measurementUnit
-
-                The units associated with the dwc:measurementValue.
-
-            .. dropdown:: measurementValue
-
-                The value of the measurement, fact, characteristic, or assertion.
-
-            .. dropdown:: parentMeasurementID
-
-                An identifier for a broader dwc:MeasurementOrFact that groups this and potentially other dwc:MeasurementOrFacts.
-
-
-
-        .. dropdown:: No Parent Class
-
-            .. dropdown:: Event
-
-                An action that occurs at some location during some time.
-
-            .. dropdown:: FossilSpecimen
-
-                A preserved specimen that is a fossil.
-
-            .. dropdown:: GeologicalContext
-
-                Geological information, such as stratigraphy, that qualifies a region or place.
-
-            .. dropdown:: HumanObservation
-
-                An output of a human observation process.
-
-            .. dropdown:: Identification
-
-                A taxonomic determination (e.g., the assignment to a dwc:Taxon).
-
-            .. dropdown:: LivingSpecimen
-
-                A specimen that is alive.
-
-            .. dropdown:: MachineObservation
-
-                An output of a machine observation process.
-
-            .. dropdown:: MaterialCitation
-
-                A reference to or citation of one, a part of, or multiple specimens in scholarly publications.
-
-            .. dropdown:: Occurrence
-
-                An existence of a dwc:Organism at a particular place at a particular time.
-
-            .. dropdown:: Organism
-
-                A particular organism or defined group of organisms considered to be taxonomically homogeneous.
-
-            .. dropdown:: PreservedSpecimen
-
-                A specimen that has been preserved.
-
-            .. dropdown:: Taxon
-
-                A group of organisms (sensu http://purl.obolibrary.org/obo/OBI_0100026) considered by taxonomists to form a homogeneous unit.
-
-            .. dropdown:: MaterialEntity
-
-                An entity that can be identified, exists for some period of time, and consists in whole or in part of physical matter while it exists.
-
-            .. dropdown:: MaterialSample
-
-                A material entity that represents an entity of interest in whole or in part.
-
-            .. dropdown:: MeasurementOrFact
-
-                A measurement of or fact about an rdfs:Resource (http://www.w3.org/2000/01/rdf-schema#Resource).
-
-            .. dropdown:: ResourceRelationship
-
-                A relationship of one rdfs:Resource (http://www.w3.org/2000/01/rdf-schema#Resource) to another.
-
-            .. dropdown:: basisOfRecord
-
-                The specific nature of the data record.
-
-            .. dropdown:: collectionCode
-
-                The name, acronym, coden, or initialism identifying the collection or data set from which the record was derived.
-
-            .. dropdown:: collectionID
-
-                An identifier for the collection or dataset from which the record was derived.
-
-            .. dropdown:: dataGeneralizations
-
-                Actions taken to make the shared data less specific or complete than in its original form. Suggests that alternative data of higher quality may be available on request.
-
-            .. dropdown:: datasetName
-
-                The name identifying the data set from which the record was derived.
-
-            .. dropdown:: dynamicProperties
-
-                A list of additional measurements, facts, characteristics, or assertions about the record. Meant to provide a mechanism for structured content.
-
-            .. dropdown:: informationWithheld
-
-                Additional information that exists, but that has not been shared in the given record.
-
-            .. dropdown:: institutionCode
-
-                The name (or acronym) in use by the institution having custody of the object(s) or information referred to in the record.
-
-            .. dropdown:: institutionID
-
-                An identifier for the institution having custody of the object(s) or information referred to in the record.
-
-            .. dropdown:: ownerInstitutionCode
-
-                The name (or acronym) in use by the institution having ownership of the object(s) or information referred to in the record.
-
-            .. dropdown:: datasetID
-
-                An identifier for the set of data. May be a global unique identifier or an identifier specific to a collection or institution.
-
-            .. dropdown:: accordingTo
-
-                Abstract term to attribute information to a source.
-
-
+            A reference to or citation of one, a part of, or multiple specimens in scholarly publications.
 
         .. dropdown:: Occurrence
 
-            .. dropdown:: vitality
-
-                An indication of whether a dwc:Organism was alive or dead at the time of collection or observation.
-
-            .. dropdown:: associatedMedia
-
-                A list (concatenated and separated) of identifiers (publication, global unique identifier, URI) of media associated with the dwc:Occurrence.
-
-            .. dropdown:: associatedOccurrences
-
-                A list (concatenated and separated) of identifiers of other dwc:Occurrence records and their associations to this dwc:Occurrence.
-
-            .. dropdown:: associatedReferences
-
-                A list (concatenated and separated) of identifiers (publication, bibliographic reference, global unique identifier, URI) of literature associated with the dwc:Occurrence.
-
-            .. dropdown:: associatedTaxa
-
-                A list (concatenated and separated) of identifiers or names of dwc:Taxon records and the associations of this dwc:Occurrence to each of them.
-
-            .. dropdown:: behavior
-
-                The behavior shown by the subject at the time the dwc:Occurrence was recorded.
-
-            .. dropdown:: caste
-
-                Categorisation of individuals for eusocial species (including some mammals and arthropods).
-
-            .. dropdown:: catalogNumber
-
-                An identifier (preferably unique) for the record within the data set or collection.
-
-            .. dropdown:: degreeOfEstablishment
-
-                The degree to which a dwc:Organism survives, reproduces, and expands its range at the given place and time.
-
-            .. dropdown:: establishmentMeans
-
-                Statement about whether a dwc:Organism has been introduced to a given place and time through the direct or indirect activity of modern humans.
-
-            .. dropdown:: georeferenceVerificationStatus
-
-                A categorical description of the extent to which the georeference has been verified to represent the best possible spatial description for the dcterms:Location of the dwc:Occurrence.
-
-            .. dropdown:: individualCount
-
-                The number of individuals present at the time of the dwc:Occurrence.
-
-            .. dropdown:: lifeStage
-
-                The age class or life stage of the dwc:Organism(s) at the time the dwc:Occurrence was recorded.
-
-            .. dropdown:: occurrenceID
-
-                An identifier for the dwc:Occurrence (as opposed to a particular digital record of the dwc:Occurrence). In the absence of a persistent global unique identifier, construct one from a combination of identifiers in the record that will most closely make the dwc:occurrenceID globally unique.
-
-            .. dropdown:: occurrenceRemarks
-
-                Comments or notes about the dwc:Occurrence.
-
-            .. dropdown:: occurrenceStatus
-
-                A statement about the presence or absence of a dwc:Taxon at a dcterms:Location.
-
-            .. dropdown:: organismQuantity
-
-                A number or enumeration value for the quantity of dwc:Organisms.
-
-            .. dropdown:: organismQuantityType
-
-                The type of quantification system used for the quantity of dwc:Organisms.
-
-            .. dropdown:: otherCatalogNumbers
-
-                A list (concatenated and separated) of previous or alternate fully qualified catalog numbers or other human-used identifiers for the same dwc:Occurrence, whether in the current or any other data set or collection.
-
-            .. dropdown:: pathway
-
-                The process by which a dwc:Organism came to be in a given place at a given time.
-
-            .. dropdown:: recordNumber
-
-                An identifier given to the dwc:Occurrence at the time it was recorded. Often serves as a link between field notes and a dwc:Occurrence record, such as a specimen collector's number.
-
-            .. dropdown:: recordedBy
-
-                A list (concatenated and separated) of names of people, groups, or organizations responsible for recording the original dwc:Occurrence. The primary collector or observer, especially one who applies a personal identifier (dwc:recordNumber), should be listed first.
-
-            .. dropdown:: recordedByID
-
-                A list (concatenated and separated) of the globally unique identifier for the person, people, groups, or organizations responsible for recording the original dwc:Occurrence.
-
-            .. dropdown:: reproductiveCondition
-
-                The reproductive condition of the biological individual(s) represented in the dwc:Occurrence.
-
-            .. dropdown:: sex
-
-                The sex of the biological individual(s) represented in the dwc:Occurrence.
-
-
+            An existence of a dwc:Organism at a particular place at a particular time.
 
         .. dropdown:: Organism
 
-            .. dropdown:: associatedOrganisms
+            A particular organism or defined group of organisms considered to be taxonomically homogeneous.
 
-                A list (concatenated and separated) of identifiers of other dwc:Organisms and the associations of this dwc:Organism to each of them.
+        .. dropdown:: PreservedSpecimen
 
-            .. dropdown:: organismID
-
-                An identifier for the dwc:Organism instance (as opposed to a particular digital record of the dwc:Organism). May be a globally unique identifier or an identifier specific to the data set.
-
-            .. dropdown:: organismName
-
-                A textual name or label assigned to a dwc:Organism instance.
-
-            .. dropdown:: organismRemarks
-
-                Comments or notes about the dwc:Organism instance.
-
-            .. dropdown:: organismScope
-
-                A description of the kind of dwc:Organism instance. Can be used to indicate whether the dwc:Organism instance represents a discrete organism or if it represents a particular type of aggregation.
-
-            .. dropdown:: previousIdentifications
-
-                A list (concatenated and separated) of previous assignments of names to the dwc:Organism.
-
-
-
-        .. dropdown:: ResourceRelationship
-
-            .. dropdown:: relationshipEstablishedDate
-
-                The date-time on which the relationship between the two resources was established.
-
-            .. dropdown:: relationshipOfResource
-
-                The relationship of the subject (identified by dwc:resourceID) to the object (identified by dwc:relatedResourceID).
-
-            .. dropdown:: relationshipOfResourceID
-
-                An identifier for the relationship type (predicate) that connects the subject identified by dwc:resourceID to its object identified by dwc:relatedResourceID.
-
-            .. dropdown:: relationshipRemarks
-
-                Comments or notes about the relationship between the two resources.
-
-            .. dropdown:: resourceRelationshipID
-
-                An identifier for an instance of relationship between one resource (the subject) and another (dwc:relatedResource, the object).
-
-            .. dropdown:: relatedResourceID
-
-                An identifier for a related resource (the object, rather than the subject of the relationship).
-
-            .. dropdown:: relationshipAccordingTo
-
-                The source (person, organization, publication, reference) establishing the relationship between the two resources.
-
-            .. dropdown:: resourceID
-
-                An identifier for the resource that is the subject of the relationship.
-
-
+            A specimen that has been preserved.
 
         .. dropdown:: Taxon
 
-            .. dropdown:: superfamily
+            A group of organisms (sensu http://purl.obolibrary.org/obo/OBI_0100026) considered by taxonomists to form a homogeneous unit.
 
-                The full scientific name of the superfamily in which the dwc:Taxon is classified.
+        .. dropdown:: MaterialEntity
 
-            .. dropdown:: acceptedNameUsage
+            An entity that can be identified, exists for some period of time, and consists in whole or in part of physical matter while it exists.
 
-                The full name, with authorship and date information if known, of the currently valid (zoological) or accepted (botanical) dwc:Taxon.
+        .. dropdown:: MaterialSample
 
-            .. dropdown:: acceptedNameUsageID
+            A material entity that represents an entity of interest in whole or in part.
 
-                An identifier for the name usage (documented meaning of the name according to a source) of the currently valid (zoological) or accepted (botanical) taxon.
+        .. dropdown:: MeasurementOrFact
 
-            .. dropdown:: class
+            A measurement of or fact about an rdfs:Resource (http://www.w3.org/2000/01/rdf-schema#Resource).
 
-                The full scientific name of the class in which the dwc:Taxon is classified.
+        .. dropdown:: ResourceRelationship
 
-            .. dropdown:: cultivarEpithet
+            A relationship of one rdfs:Resource (http://www.w3.org/2000/01/rdf-schema#Resource) to another.
 
-                Part of the name of a cultivar, cultivar group or grex that follows the dwc:scientificName.
+        .. dropdown:: basisOfRecord
 
-            .. dropdown:: family
+            The specific nature of the data record.
 
-                The full scientific name of the family in which the dwc:Taxon is classified.
+        .. dropdown:: collectionCode
 
-            .. dropdown:: genericName
+            The name, acronym, coden, or initialism identifying the collection or data set from which the record was derived.
 
-                The genus part of the dwc:scientificName without authorship.
+        .. dropdown:: collectionID
 
-            .. dropdown:: genus
+            An identifier for the collection or dataset from which the record was derived.
 
-                The full scientific name of the genus in which the dwc:Taxon is classified.
+        .. dropdown:: dataGeneralizations
 
-            .. dropdown:: higherClassification
+            Actions taken to make the shared data less specific or complete than in its original form. Suggests that alternative data of higher quality may be available on request.
 
-                A list (concatenated and separated) of taxa names terminating at the rank immediately superior to the referenced dwc:Taxon.
+        .. dropdown:: datasetName
 
-            .. dropdown:: infragenericEpithet
+            The name identifying the data set from which the record was derived.
 
-                The infrageneric part of a binomial name at ranks above species but below genus.
+        .. dropdown:: dynamicProperties
 
-            .. dropdown:: infraspecificEpithet
+            A list of additional measurements, facts, characteristics, or assertions about the record. Meant to provide a mechanism for structured content.
 
-                The name of the lowest or terminal infraspecific epithet of the dwc:scientificName, excluding any rank designation.
+        .. dropdown:: informationWithheld
 
-            .. dropdown:: kingdom
+            Additional information that exists, but that has not been shared in the given record.
 
-                The full scientific name of the kingdom in which the dwc:Taxon is classified.
+        .. dropdown:: institutionCode
 
-            .. dropdown:: nameAccordingTo
+            The name (or acronym) in use by the institution having custody of the object(s) or information referred to in the record.
 
-                The reference to the source in which the specific taxon concept circumscription is defined or implied - traditionally signified by the Latin "sensu" or "sec." (from secundum, meaning "according to"). For taxa that result from identifications, a reference to the keys, monographs, experts and other sources should be given.
+        .. dropdown:: institutionID
 
-            .. dropdown:: nameAccordingToID
+            An identifier for the institution having custody of the object(s) or information referred to in the record.
 
-                An identifier for the source in which the specific taxon concept circumscription is defined or implied. See dwc:nameAccordingTo.
+        .. dropdown:: ownerInstitutionCode
 
-            .. dropdown:: namePublishedIn
+            The name (or acronym) in use by the institution having ownership of the object(s) or information referred to in the record.
 
-                A reference for the publication in which the dwc:scientificName was originally established under the rules of the associated dwc:nomenclaturalCode.
+        .. dropdown:: datasetID
 
-            .. dropdown:: namePublishedInID
+            An identifier for the set of data. May be a global unique identifier or an identifier specific to a collection or institution.
 
-                An identifier for the publication in which the dwc:scientificName was originally established under the rules of the associated dwc:nomenclaturalCode.
+        .. dropdown:: accordingTo
 
-            .. dropdown:: namePublishedInYear
+            Abstract term to attribute information to a source.
 
-                The four-digit year in which the dwc:scientificName was published.
 
-            .. dropdown:: nomenclaturalCode
 
-                The nomenclatural code (or codes in the case of an ambiregnal name) under which the dwc:scientificName is constructed.
+    * .. dropdown:: Occurrence
 
-            .. dropdown:: nomenclaturalStatus
+        .. dropdown:: vitality
 
-                The status related to the original publication of the name and its conformance to the relevant rules of nomenclature. It is based essentially on an algorithm according to the business rules of the code. It requires no taxonomic opinion.
+            An indication of whether a dwc:Organism was alive or dead at the time of collection or observation.
 
-            .. dropdown:: order
+        .. dropdown:: associatedMedia
 
-                The full scientific name of the order in which the dwc:Taxon is classified.
+            A list (concatenated and separated) of identifiers (publication, global unique identifier, URI) of media associated with the dwc:Occurrence.
 
-            .. dropdown:: originalNameUsage
+        .. dropdown:: associatedOccurrences
 
-                The taxon name, with authorship and date information if known, as it originally appeared when first established under the rules of the associated dwc:nomenclaturalCode. The basionym (botany) or basonym (bacteriology) of the dwc:scientificName or the senior/earlier homonym for replaced names.
+            A list (concatenated and separated) of identifiers of other dwc:Occurrence records and their associations to this dwc:Occurrence.
 
-            .. dropdown:: originalNameUsageID
+        .. dropdown:: associatedReferences
 
-                An identifier for the name usage (documented meaning of the name according to a source) in which the terminal element of the dwc:scientificName was originally established under the rules of the associated dwc:nomenclaturalCode.
+            A list (concatenated and separated) of identifiers (publication, bibliographic reference, global unique identifier, URI) of literature associated with the dwc:Occurrence.
 
-            .. dropdown:: parentNameUsage
+        .. dropdown:: associatedTaxa
 
-                The full name, with authorship and date information if known, of the direct, most proximate higher-rank parent dwc:Taxon (in a classification) of the most specific element of the dwc:scientificName.
+            A list (concatenated and separated) of identifiers or names of dwc:Taxon records and the associations of this dwc:Occurrence to each of them.
 
-            .. dropdown:: parentNameUsageID
+        .. dropdown:: behavior
 
-                An identifier for the name usage (documented meaning of the name according to a source) of the direct, most proximate higher-rank parent taxon (in a classification) of the most specific element of the dwc:scientificName.
+            The behavior shown by the subject at the time the dwc:Occurrence was recorded.
 
-            .. dropdown:: phylum
+        .. dropdown:: caste
 
-                The full scientific name of the phylum or division in which the dwc:Taxon is classified.
+            Categorisation of individuals for eusocial species (including some mammals and arthropods).
 
-            .. dropdown:: scientificName
+        .. dropdown:: catalogNumber
 
-                The full scientific name, with authorship and date information if known. When forming part of a dwc:Identification, this should be the name in lowest level taxonomic rank that can be determined. This term should not contain identification qualifications, which should instead be supplied in the dwc:identificationQualifier term.
+            An identifier (preferably unique) for the record within the data set or collection.
 
-            .. dropdown:: scientificNameAuthorship
+        .. dropdown:: degreeOfEstablishment
 
-                The authorship information for the dwc:scientificName formatted according to the conventions of the applicable dwc:nomenclaturalCode.
+            The degree to which a dwc:Organism survives, reproduces, and expands its range at the given place and time.
 
-            .. dropdown:: specificEpithet
+        .. dropdown:: establishmentMeans
 
-                The name of the first or species epithet of the dwc:scientificName.
+            Statement about whether a dwc:Organism has been introduced to a given place and time through the direct or indirect activity of modern humans.
 
-            .. dropdown:: subfamily
+        .. dropdown:: georeferenceVerificationStatus
 
-                The full scientific name of the subfamily in which the dwc:Taxon is classified.
+            A categorical description of the extent to which the georeference has been verified to represent the best possible spatial description for the dcterms:Location of the dwc:Occurrence.
 
-            .. dropdown:: subgenus
+        .. dropdown:: individualCount
 
-                The full scientific name of the subgenus in which the dwc:Taxon is classified. Values should include the genus to avoid homonym confusion.
+            The number of individuals present at the time of the dwc:Occurrence.
 
-            .. dropdown:: subtribe
+        .. dropdown:: lifeStage
 
-                The full scientific name of the subtribe in which the dwc:Taxon is classified.
+            The age class or life stage of the dwc:Organism(s) at the time the dwc:Occurrence was recorded.
 
-            .. dropdown:: taxonConceptID
+        .. dropdown:: occurrenceID
 
-                An identifier for the taxonomic concept to which the record refers - not for the nomenclatural details of a dwc:Taxon.
+            An identifier for the dwc:Occurrence (as opposed to a particular digital record of the dwc:Occurrence). In the absence of a persistent global unique identifier, construct one from a combination of identifiers in the record that will most closely make the dwc:occurrenceID globally unique.
 
-            .. dropdown:: taxonID
+        .. dropdown:: occurrenceRemarks
 
-                An identifier for the set of dwc:Taxon information. May be a global unique identifier or an identifier specific to the data set.
+            Comments or notes about the dwc:Occurrence.
 
-            .. dropdown:: taxonRank
+        .. dropdown:: occurrenceStatus
 
-                The taxonomic rank of the most specific name in the dwc:scientificName.
+            A statement about the presence or absence of a dwc:Taxon at a dcterms:Location.
 
-            .. dropdown:: taxonomicStatus
+        .. dropdown:: organismQuantity
 
-                The status of the use of the dwc:scientificName as a label for a taxon. Requires taxonomic opinion to define the scope of a dwc:Taxon. Rules of priority then are used to define the taxonomic status of the nomenclature contained in that scope, combined with the experts opinion. It must be linked to a specific taxonomic reference that defines the concept.
+            A number or enumeration value for the quantity of dwc:Organisms.
 
-            .. dropdown:: tribe
+        .. dropdown:: organismQuantityType
 
-                The full scientific name of the tribe in which the dwc:Taxon is classified.
+            The type of quantification system used for the quantity of dwc:Organisms.
 
-            .. dropdown:: verbatimTaxonRank
+        .. dropdown:: otherCatalogNumbers
 
-                The taxonomic rank of the most specific name in the dwc:scientificName as it appears in the original record.
+            A list (concatenated and separated) of previous or alternate fully qualified catalog numbers or other human-used identifiers for the same dwc:Occurrence, whether in the current or any other data set or collection.
 
-            .. dropdown:: vernacularName
+        .. dropdown:: pathway
 
-                A common or vernacular name.
+            The process by which a dwc:Organism came to be in a given place at a given time.
 
-            .. dropdown:: scientificNameID
+        .. dropdown:: recordNumber
 
-                An identifier for the nomenclatural (not taxonomic) details of a scientific name.
+            An identifier given to the dwc:Occurrence at the time it was recorded. Often serves as a link between field notes and a dwc:Occurrence record, such as a specimen collector's number.
 
-            .. dropdown:: taxonRemarks
+        .. dropdown:: recordedBy
 
-                Comments or notes about the taxon or name.
+            A list (concatenated and separated) of names of people, groups, or organizations responsible for recording the original dwc:Occurrence. The primary collector or observer, especially one who applies a personal identifier (dwc:recordNumber), should be listed first.
+
+        .. dropdown:: recordedByID
+
+            A list (concatenated and separated) of the globally unique identifier for the person, people, groups, or organizations responsible for recording the original dwc:Occurrence.
+
+        .. dropdown:: reproductiveCondition
+
+            The reproductive condition of the biological individual(s) represented in the dwc:Occurrence.
+
+        .. dropdown:: sex
+
+            The sex of the biological individual(s) represented in the dwc:Occurrence.
+
+
+
+    * .. dropdown:: Organism
+
+        .. dropdown:: associatedOrganisms
+
+            A list (concatenated and separated) of identifiers of other dwc:Organisms and the associations of this dwc:Organism to each of them.
+
+        .. dropdown:: organismID
+
+            An identifier for the dwc:Organism instance (as opposed to a particular digital record of the dwc:Organism). May be a globally unique identifier or an identifier specific to the data set.
+
+        .. dropdown:: organismName
+
+            A textual name or label assigned to a dwc:Organism instance.
+
+        .. dropdown:: organismRemarks
+
+            Comments or notes about the dwc:Organism instance.
+
+        .. dropdown:: organismScope
+
+            A description of the kind of dwc:Organism instance. Can be used to indicate whether the dwc:Organism instance represents a discrete organism or if it represents a particular type of aggregation.
+
+        .. dropdown:: previousIdentifications
+
+            A list (concatenated and separated) of previous assignments of names to the dwc:Organism.
+
+
+
+    * .. dropdown:: ResourceRelationship
+
+        .. dropdown:: relationshipEstablishedDate
+
+            The date-time on which the relationship between the two resources was established.
+
+        .. dropdown:: relationshipOfResource
+
+            The relationship of the subject (identified by dwc:resourceID) to the object (identified by dwc:relatedResourceID).
+
+        .. dropdown:: relationshipOfResourceID
+
+            An identifier for the relationship type (predicate) that connects the subject identified by dwc:resourceID to its object identified by dwc:relatedResourceID.
+
+        .. dropdown:: relationshipRemarks
+
+            Comments or notes about the relationship between the two resources.
+
+        .. dropdown:: resourceRelationshipID
+
+            An identifier for an instance of relationship between one resource (the subject) and another (dwc:relatedResource, the object).
+
+        .. dropdown:: relatedResourceID
+
+            An identifier for a related resource (the object, rather than the subject of the relationship).
+
+        .. dropdown:: relationshipAccordingTo
+
+            The source (person, organization, publication, reference) establishing the relationship between the two resources.
+
+        .. dropdown:: resourceID
+
+            An identifier for the resource that is the subject of the relationship.
+
+
+
+    * .. dropdown:: Taxon
+
+        .. dropdown:: superfamily
+
+            The full scientific name of the superfamily in which the dwc:Taxon is classified.
+
+        .. dropdown:: acceptedNameUsage
+
+            The full name, with authorship and date information if known, of the currently valid (zoological) or accepted (botanical) dwc:Taxon.
+
+        .. dropdown:: acceptedNameUsageID
+
+            An identifier for the name usage (documented meaning of the name according to a source) of the currently valid (zoological) or accepted (botanical) taxon.
+
+        .. dropdown:: class
+
+            The full scientific name of the class in which the dwc:Taxon is classified.
+
+        .. dropdown:: cultivarEpithet
+
+            Part of the name of a cultivar, cultivar group or grex that follows the dwc:scientificName.
+
+        .. dropdown:: family
+
+            The full scientific name of the family in which the dwc:Taxon is classified.
+
+        .. dropdown:: genericName
+
+            The genus part of the dwc:scientificName without authorship.
+
+        .. dropdown:: genus
+
+            The full scientific name of the genus in which the dwc:Taxon is classified.
+
+        .. dropdown:: higherClassification
+
+            A list (concatenated and separated) of taxa names terminating at the rank immediately superior to the referenced dwc:Taxon.
+
+        .. dropdown:: infragenericEpithet
+
+            The infrageneric part of a binomial name at ranks above species but below genus.
+
+        .. dropdown:: infraspecificEpithet
+
+            The name of the lowest or terminal infraspecific epithet of the dwc:scientificName, excluding any rank designation.
+
+        .. dropdown:: kingdom
+
+            The full scientific name of the kingdom in which the dwc:Taxon is classified.
+
+        .. dropdown:: nameAccordingTo
+
+            The reference to the source in which the specific taxon concept circumscription is defined or implied - traditionally signified by the Latin "sensu" or "sec." (from secundum, meaning "according to"). For taxa that result from identifications, a reference to the keys, monographs, experts and other sources should be given.
+
+        .. dropdown:: nameAccordingToID
+
+            An identifier for the source in which the specific taxon concept circumscription is defined or implied. See dwc:nameAccordingTo.
+
+        .. dropdown:: namePublishedIn
+
+            A reference for the publication in which the dwc:scientificName was originally established under the rules of the associated dwc:nomenclaturalCode.
+
+        .. dropdown:: namePublishedInID
+
+            An identifier for the publication in which the dwc:scientificName was originally established under the rules of the associated dwc:nomenclaturalCode.
+
+        .. dropdown:: namePublishedInYear
+
+            The four-digit year in which the dwc:scientificName was published.
+
+        .. dropdown:: nomenclaturalCode
+
+            The nomenclatural code (or codes in the case of an ambiregnal name) under which the dwc:scientificName is constructed.
+
+        .. dropdown:: nomenclaturalStatus
+
+            The status related to the original publication of the name and its conformance to the relevant rules of nomenclature. It is based essentially on an algorithm according to the business rules of the code. It requires no taxonomic opinion.
+
+        .. dropdown:: order
+
+            The full scientific name of the order in which the dwc:Taxon is classified.
+
+        .. dropdown:: originalNameUsage
+
+            The taxon name, with authorship and date information if known, as it originally appeared when first established under the rules of the associated dwc:nomenclaturalCode. The basionym (botany) or basonym (bacteriology) of the dwc:scientificName or the senior/earlier homonym for replaced names.
+
+        .. dropdown:: originalNameUsageID
+
+            An identifier for the name usage (documented meaning of the name according to a source) in which the terminal element of the dwc:scientificName was originally established under the rules of the associated dwc:nomenclaturalCode.
+
+        .. dropdown:: parentNameUsage
+
+            The full name, with authorship and date information if known, of the direct, most proximate higher-rank parent dwc:Taxon (in a classification) of the most specific element of the dwc:scientificName.
+
+        .. dropdown:: parentNameUsageID
+
+            An identifier for the name usage (documented meaning of the name according to a source) of the direct, most proximate higher-rank parent taxon (in a classification) of the most specific element of the dwc:scientificName.
+
+        .. dropdown:: phylum
+
+            The full scientific name of the phylum or division in which the dwc:Taxon is classified.
+
+        .. dropdown:: scientificName
+
+            The full scientific name, with authorship and date information if known. When forming part of a dwc:Identification, this should be the name in lowest level taxonomic rank that can be determined. This term should not contain identification qualifications, which should instead be supplied in the dwc:identificationQualifier term.
+
+        .. dropdown:: scientificNameAuthorship
+
+            The authorship information for the dwc:scientificName formatted according to the conventions of the applicable dwc:nomenclaturalCode.
+
+        .. dropdown:: specificEpithet
+
+            The name of the first or species epithet of the dwc:scientificName.
+
+        .. dropdown:: subfamily
+
+            The full scientific name of the subfamily in which the dwc:Taxon is classified.
+
+        .. dropdown:: subgenus
+
+            The full scientific name of the subgenus in which the dwc:Taxon is classified. Values should include the genus to avoid homonym confusion.
+
+        .. dropdown:: subtribe
+
+            The full scientific name of the subtribe in which the dwc:Taxon is classified.
+
+        .. dropdown:: taxonConceptID
+
+            An identifier for the taxonomic concept to which the record refers - not for the nomenclatural details of a dwc:Taxon.
+
+        .. dropdown:: taxonID
+
+            An identifier for the set of dwc:Taxon information. May be a global unique identifier or an identifier specific to the data set.
+
+        .. dropdown:: taxonRank
+
+            The taxonomic rank of the most specific name in the dwc:scientificName.
+
+        .. dropdown:: taxonomicStatus
+
+            The status of the use of the dwc:scientificName as a label for a taxon. Requires taxonomic opinion to define the scope of a dwc:Taxon. Rules of priority then are used to define the taxonomic status of the nomenclature contained in that scope, combined with the experts opinion. It must be linked to a specific taxonomic reference that defines the concept.
+
+        .. dropdown:: tribe
+
+            The full scientific name of the tribe in which the dwc:Taxon is classified.
+
+        .. dropdown:: verbatimTaxonRank
+
+            The taxonomic rank of the most specific name in the dwc:scientificName as it appears in the original record.
+
+        .. dropdown:: vernacularName
+
+            A common or vernacular name.
+
+        .. dropdown:: scientificNameID
+
+            An identifier for the nomenclatural (not taxonomic) details of a scientific name.
+
+        .. dropdown:: taxonRemarks
+
+            Comments or notes about the taxon or name.
 
 
 

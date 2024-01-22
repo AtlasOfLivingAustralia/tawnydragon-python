@@ -23,5 +23,6 @@ through vocabularies, termlists and finally terms.
    :maxdepth: 2
    :hidden:
 
+   Standards Guide <Standards_Guide/index>
    Vocabulary List <vocab_tab/index>
    API Docs <autoapi/tawnydragon>
